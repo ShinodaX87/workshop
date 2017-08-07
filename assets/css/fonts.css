@@ -24,6 +24,16 @@
     font-size: 16px;
     line-height: 1.2;
   }
+  h1 {
+    font-size: 2rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0.25rem;
+  }
+  p {
+    font-size: 1rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
 }
 
 
@@ -34,7 +44,6 @@
     font-family: sans-serif;
     font-size: 24px;
     line-height: 1.2;
-    /* 28.8px */
   }
 }
 
@@ -46,7 +55,6 @@
     font-family: sans-serif;
     font-size: 18px;
     line-height: 1.2;
-    /* 28.8px */
   }
 }
 
@@ -63,7 +71,6 @@
 .serif-2 {
   font-family: Karma, serif;
   line-height: 1.45;
-  /* 34.8px */
 }
 
 .sans-serif-2 {
