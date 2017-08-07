@@ -1,0 +1,12 @@
+/**
+ * useful classes
+ *
+ * @package data visualisation
+ * @since 2017/08/07
+ * @version 1.0.0
+ * @author Michael
+ */
+
+.invisible {
+  display: none;
+}

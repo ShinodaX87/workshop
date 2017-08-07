@@ -9,6 +9,14 @@ https://www.fontsquirrel.com/matcherator
 
 http://fontawesome.io/icons/
 
+https://www.fontshop.com
+
 ## Lesen und Wahrnehmung
 
 https://www.nngroup.com/articles/f-shaped-pattern-reading-web-content/
+
+## Tools
+
+https://inkscape.org/de/
+
+http://caniuse.com/
