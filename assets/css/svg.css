@@ -1,0 +1,35 @@
+/**
+ * SVG styles
+ *
+ * @package data visualisation
+ * @since 2017/08/07
+ * @version 1.0.0
+ * @author Michael
+ */
+
+svg {
+  background-color: lightgray;
+  border-width: 5px;
+  border-color: gray;
+  border-radius: 2.5px;
+  border-style: solid;
+}
+
+svg circle {
+  r: 100px;
+  cx: 0;
+  cy: 0;
+  fill: green;
+  stroke: blue;
+  stroke-width: 5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+svg .needle {
+  stroke: orange;
+  stroke-width: 5px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  fill: transparent;
+}

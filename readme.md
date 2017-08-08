@@ -20,3 +20,7 @@ https://www.nngroup.com/articles/f-shaped-pattern-reading-web-content/
 https://inkscape.org/de/
 
 http://caniuse.com/
+
+
+## svg
+http://www.selfsvg.info/?section=3.5
