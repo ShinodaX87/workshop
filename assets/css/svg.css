@@ -32,4 +32,7 @@ svg .needle {
   stroke-linejoin: round;
   stroke-linecap: round;
   fill: transparent;
+  transition-property: transform;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
 }
