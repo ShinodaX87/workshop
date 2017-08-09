@@ -31,3 +31,8 @@ text {
   fill: hsla(0, 100%, 100%, 0.8);
   stroke: none;
 }
+
+.axis path, .axis line {
+  stroke: hsla(0, 100%, 100%, 1);
+  stroke-width: 1px;
+}
