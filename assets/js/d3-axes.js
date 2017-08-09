@@ -1,4 +1,4 @@
-/* global console, window, document */
+/* global console, d3, window, document */
 /**
  * D3 Axes Types
  *
@@ -50,21 +50,17 @@
            height:320,
            padding:20
          },
-         data = [1,2,3,4,5,6,7,8,9,10],
+         data = [0,1,2,3,4,5,6,7,8,9,10],
          xRange = [0, config.width-(2*config.padding)],
-         yRange = [0, config.height-(2*config.padding)],
+         yRange = [config.height-(2*config.padding), 0],
          chart = d3.select('body')
                    .append('svg')
                      .attr('width', config.width)
                      .attr('height', config.height),
          xScale = d3.scaleLinear().domain(d3.extent(data, function (value) { return value; })).range(xRange),
          yScale = d3.scaleLinear().domain(d3.extent(data, function (value) { return value; })).range(yRange),
-         xAxis = d3.axisBottom()
-                  .scale(xScale)
-                  .ticks(5),
-         yAxis = d3.axisLeft()
-                 .scale(yScale)
-                 .ticks(5);
+         yAxis = d3.axisLeft().scale(yScale),
+         xAxis = d3.axisBottom().scale(xScale);
 
      // methods
 
@@ -72,10 +68,12 @@
      chart.append('g')
      .call(xAxis)
        .attr('class', 'axis')
-       .attr('transform', 'translate(' + config.padding + ', ' + (config.height-30) + ')')
+       .attr('transform', 'translate(' + config.padding + ', ' + (config.height-config.padding) + ')');
+
+     chart.append('g')
      .call(yAxis)
        .attr('class', 'axis')
-       .attr('transform', 'translate(' + config.padding + ', ' + (0) + ')');
+       .attr('transform', 'translate(' + config.padding + ', ' + (config.padding) + ')');
 
      // - - - - - - - - - -
  }());
