@@ -7,10 +7,35 @@
  * @author Michael
  */
 
+
+/* colors */
+
 svg {
-  background-color: lightgray;
+  background-color: #04A2E5;
+  border-color: #04A2E5;
+}
+
+html {
+  background-color: #3F5A66;
+  color: #3F5A66;
+}
+
+svg circle {
+  /* hue [0-360deg], saturation [0-100%], lightness [0-50%, 50-100%], alpha [0.00-1.00] */
+  fill: #037EB2;
+  stroke: #037EB2;
+}
+
+svg .needle {
+  fill: #024866;
+  stroke: #024866;
+}
+
+
+/* geometry */
+
+svg {
   border-width: 5px;
-  border-color: gray;
   border-radius: 2.5px;
   border-style: solid;
 }
@@ -19,19 +44,15 @@ svg circle {
   r: 100px;
   cx: 0;
   cy: 0;
-  fill: green;
-  stroke: blue;
   stroke-width: 5px;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
 svg .needle {
-  stroke: orange;
   stroke-width: 5px;
   stroke-linejoin: round;
   stroke-linecap: round;
-  fill: transparent;
   transition-property: transform;
   transition-duration: 500ms;
   transition-timing-function: ease-in-out;

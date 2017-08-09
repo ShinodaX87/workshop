@@ -14,7 +14,10 @@
   // - - - - - - - - - -
   // declaration
   let tacho = $('#tacho'),
-      needle = $('#tacho polygon');
+      needle = $('#tacho polygon'),
+      rotate = 0,
+      output = $('output'),
+      socket = new WebSocket('ws://localhost:1337');
 
   // methods
   function rotateNeedle (value) {
@@ -22,12 +25,37 @@
     needle.attr('transform', transformValue);
   };
 
+  function writeToOutput (value) {
+    output.html(value);
+  }
+
   // control/events
-  setInterval(function(){
-    let value = Math.random() * 360;
-    console.log(value);
-    rotateNeedle(value);
-  }, 2000);
+  socket.onopen = function () {
+    socket.send('willy go ...');
+  };
+
+  socket.onerror = function (error) {
+    console.log('socket error ...');
+    console.dir(error);
+    console.table(error);
+    console.error(error);
+  };
+
+  socket.onmessage = function (event) {
+    let data = JSON.parse(event.data);
+
+    if (typeof data.rotate === 'number') {
+      rotate += data.rotate;
+      rotateNeedle(rotate);
+      writeToOutput(rotate);
+    }
+  };
+
+  // setInterval(function(){
+  //   let value = Math.random() * 360;
+  //   console.log(value);
+  //   rotateNeedle(value);
+  // }, 2000);
 
   // - - - - - - - - - -
 }());

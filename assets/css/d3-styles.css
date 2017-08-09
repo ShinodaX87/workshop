@@ -1,0 +1,25 @@
+/**
+ * d3 style collection
+ *
+ * @package data visualisation
+ * @since 2017/08/09
+ * @version 1.0.0
+ * @author Michael
+ */
+
+html {
+  color: white;
+  background-color: black;
+}
+
+svg {
+  border-color: hsla(0, 100%, 100%, 0.25);
+  border-width: 2px;
+  border-style: dashed;
+}
+
+rect {
+  fill: hsla(0, 100%, 100%, 0.5);
+  stroke: hsla(0, 100%, 100%, 0.5);
+  stroke-width: 2px;
+}

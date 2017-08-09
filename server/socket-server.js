@@ -42,7 +42,7 @@
             // send random data
             setInterval(function() {
                 let data = {
-                    rotate: Math.random() * 3 - Math.random() * 3
+                    rotate: Math.random() * 5 - Math.random() * 3
                 };
                 connection.sendUTF(JSON.stringify(data));
             }, 250);

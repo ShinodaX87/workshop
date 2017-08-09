@@ -23,4 +23,13 @@ http://caniuse.com/
 
 
 ## svg
+
 http://www.selfsvg.info/?section=3.5
+
+## Farben
+
+https://color.adobe.com/de/create/color-wheel/
+
+## Frameworks
+
+http://www.chartjs.org/
