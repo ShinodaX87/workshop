@@ -22,4 +22,12 @@ rect {
   fill: hsla(0, 100%, 100%, 0.5);
   stroke: hsla(0, 100%, 100%, 0.5);
   stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+text {
+  font-family: sans-serif;
+  fill: hsla(0, 100%, 100%, 0.8);
+  stroke: none;
 }

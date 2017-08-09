@@ -54,12 +54,21 @@
       // drawing rectangles in svg
       bar = chart.selectAll('g')
        .data([2,4,8,14,16,23,42])
-       .enter().append('g');
+       .enter().append('g')
+       .attr('transform', function (value, index) {
+         return 'translate(' + (index * (40+3)) + ',' + (320-value*5) + ')';
+       });
 
       bar.append('rect')
         .attr('height', function (value) { return value * 5; })
         .attr('width', '40');
 
+      bar.append('text')
+        .attr('x', '10')
+        .attr('y', '-5')
+        .text(function(value, index){
+          return value;
+        });
       // document.querySelector('p').classList.add('dynamic');
       // document.querySelector('p').classList.remove('dynamic');
       // document.querySelector('p').classList.toggle('dynamic');
