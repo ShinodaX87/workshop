@@ -36,6 +36,7 @@
      // control/events
      d3.tsv('assets/data/data.tsv', function (error, data) {
 
+       // read from external data ro configure x- and y-axis
        xScale.domain(data.map(function(d) { return d.name; }));
        yScale.domain([0, d3.max(data, function(d) { return d.value; })]);
 
