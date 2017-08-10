@@ -7,10 +7,11 @@
  * @author Michael
  */
 
+@import url(fonts.css);
 html {
   color: white;
   background-color: black;
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-weight: 300;
   font-size: 16px;
 }
@@ -26,13 +27,21 @@ svg {
 }
 
 rect {
-  fill: hsla(0, 100%, 100%, 0.5);
+  fill: hsla(0, 100%, 100%, 1);
   stroke: hsla(0, 100%, 100%, 1);
   stroke-width: 1px;
   stroke-linecap: round;
   stroke-linejoin: round;
   shape-rendering: geometricPrecision;
   color-rendering: optimizeQuality;
+  transition-property: fill stroke;
+  transition-duration: 250ms;
+  transition-timing-function: ease-in-out;
+}
+
+rect.active {
+  fill: hsla(0, 100%, 50%, 1);
+  stroke: hsla(0, 100%, 50%, 1);
 }
 
 text {
@@ -53,6 +62,14 @@ text {
 .values {
   font-size: 0.5rem;
   text-anchor: middle;
+}
+
+text.active {
+  font-size: 2rem;
+  font-weight: 900;
+  fill: hsla(360, 100%, 50%, 1);
+  /*transition: all 250ms ease-in-out;*/
+  stroke: hsla(360, 100%, 0%, 1);
 }
 
 .graphical {

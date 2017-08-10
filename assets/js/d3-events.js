@@ -32,6 +32,9 @@
          toChartBottom = svgHeight-config.padding,
          chart= d3.select('body').append('svg').attr('width', svgWidth).attr('height', svgHeight),
 
+         // additional layers
+         textLayer = null,
+
          // about the bars
          bar = null,
          barWidth = null,
@@ -64,7 +67,7 @@
        xScale.domain(data.map(function(d) { return d.name; }));
        xAxis = d3.axisBottom().scale(xScale);
 
-       maxValue = d3.max(data, function(d) { return d.value; });
+       maxValue = d3.max(data, function(d) { return /* unary operator for number typing: */ +d.value; });
        console.log(maxValue);
        yRange = [chartHeight, 0],
        yScale = d3.scaleLinear().range(yRange),
@@ -85,6 +88,55 @@
        bar.append('rect')
          .attr('height', function (d) { return (chartHeight-yScale(d.value)); })
          .attr('width', (barWidth-barMarginLeft-barMarginRight));
+
+       bar.on('click', function (data) {
+        //  console.log('bar clicked!');
+        //  console.log(data.value);
+        //  console.log(this);
+        //  console.log(d3.mouse(this));
+
+         d3.select(this)
+          .attr('class', 'active')
+          .append('text')
+            .text(data.value);
+       });
+
+       bar.on('mouseenter', function (data) {
+         let coords = d3.mouse(this);
+
+         d3.select('#textLayer')
+          .append('text')
+            .text(data.value)
+              .attr('class', 'active')
+              .attr('transform', 'translate(' + (coords[0]+10) + ',' + (coords[1]-10) + ')');
+
+         d3.select(this)
+          .select('rect')
+            .classed('active', true);
+       });
+
+       bar.on('mousemove', function () {
+         let coords = d3.mouse(this);
+
+         d3.select('#textLayer')
+          .select('text')
+            .transition()
+              .duration(250)
+              .ease(d3.easeLinear)
+            .attr('transform', 'translate(' + (coords[0]+10) + ',' + (coords[1]-10) + ')');
+       });
+
+       bar.on('mouseleave', function () {
+         d3.select('#textLayer')
+         .selectAll('text')
+          .remove();
+
+          d3.select(this)
+           .select('rect')
+             .classed('active', false);
+
+       });
+
 
        // * * * * * * * * * *
        // append x axis
@@ -109,6 +161,16 @@
             .attr('width',chartWidth)
             .attr('height',chartHeight)
             .attr('class', 'graphical');
+
+        // append an additional grafical element
+        chart.append('g')
+          .attr('id', 'text-layer')
+           .attr('x',0)
+           .attr('y',0)
+           .attr('width',svgWidth)
+           .attr('height',svgHeight);
+
+        console.log(d3.select('#textLayer'));
      });
    // - - - - - - - - - -
 }());

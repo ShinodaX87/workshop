@@ -35,3 +35,16 @@ https://color.adobe.com/de/create/color-wheel/
 ## Frameworks
 
 http://www.chartjs.org/
+
+http://vanilla-js.com/
+
+## D3 Dokumentation
+
+https://github.com/d3/d3/blob/master/API.md
+
+https://github.com/d3
+
+## color-rendering
+http://natureofcode.com/book/
+
+https://processing.org
