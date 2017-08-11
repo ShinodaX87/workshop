@@ -158,11 +158,12 @@
 
     chart.append("path").attr("d", pathData).attr("class", "line");
 
-    chart.selectAll(".dot").data(points).enter().append("circle").attr("class", "dot").attr("cx", function(d) {
-      return d[0];
-    }).attr("cy", function(d) {
-      return d[1];
-    });
+    chart.selectAll(".dot")
+    .data(points).enter()
+    .append("circle")
+      .attr("class", "dot")
+      .attr("cx", function(d) { return d[0]; })
+      .attr("cy", function(d) { return d[1]; });
 
     // * * * * * * * * * *
     // append x axis

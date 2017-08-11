@@ -27,21 +27,21 @@ svg {
 }
 
 rect {
-  fill: hsla(0, 100%, 100%, 1);
-  stroke: hsla(0, 100%, 100%, 1);
+  /*fill: hsla(0, 100%, 100%, 1);
+  stroke: hsla(0, 100%, 100%, 1);*/
   stroke-width: 1px;
   stroke-linecap: round;
   stroke-linejoin: round;
   shape-rendering: geometricPrecision;
   color-rendering: optimizeQuality;
-  transition-property: fill stroke;
-  transition-duration: 250ms;
+  transition-property: all;
+  transition-duration: 125ms;
   transition-timing-function: ease-in-out;
 }
 
 rect.active {
-  fill: hsla(0, 100%, 50%, 1);
-  stroke: hsla(0, 100%, 50%, 1);
+  fill: hsla(30, 100%, 50%, 1);
+  stroke: hsla(30, 100%, 50%, 1);
 }
 
 text {
@@ -80,9 +80,9 @@ text {
 text.active {
   font-size: 2rem;
   font-weight: 900;
-  fill: hsla(360, 100%, 50%, 1);
+  fill: hsla(30, 100%, 50%, 1);
   /*transition: all 250ms ease-in-out;*/
-  stroke: hsla(360, 100%, 0%, 1);
+  stroke: hsla(30, 100%, 0%, 1);
 }
 
 .graphical {
