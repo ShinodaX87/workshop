@@ -93,3 +93,15 @@ text.active {
   stroke-linecap: butt;
   stroke-linejoin: bevel;
 }
+
+.feature {
+  fill: hsla(30, 100%, 50%, 0.5);
+  stroke: hsla(30, 100%, 0%, 0.5);
+  stroke-width: 1px;
+  stroke-linecap: butt;
+  stroke-linejoin: bevel;
+}
+
+.feature:hover {
+  fill: hsla(30, 100%, 50%, 0.8);
+}
