@@ -43,10 +43,14 @@
             setInterval(function() {
                 let data = {
                     rotate: Math.random() * 5 - Math.random() * 3,
-                    translate : Math.random() * 10
+                    translate : Math.random() * 10,
+                    name : 'city' + Math.round(Math.random()*100),
+                    latitude : 45 + Math.random(),
+                    longitude : 7 + Math.random(),
+                    population : 2000 + Math.random()*100000
                 };
                 connection.sendUTF(JSON.stringify(data));
-            }, 100);
+            }, 1000);
         });
         connection.on('close', function() {
             console.log('connection closed!');

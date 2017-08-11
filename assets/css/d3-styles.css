@@ -105,3 +105,11 @@ text.active {
 .feature:hover {
   fill: hsla(30, 100%, 50%, 0.8);
 }
+
+.location {
+  fill: hsla(40, 100%, 50%, 0.5);
+  stroke: hsla(40, 100%, 0%, 0.5);
+  stroke-width: 1px;
+  stroke-linecap: butt;
+  stroke-linejoin: bevel;
+}
