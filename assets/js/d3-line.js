@@ -83,33 +83,6 @@
        yAxis = d3.axisLeft().scale(yScale);
 
        // * * * * * * * * * *
-       // create line data
-       // as 2D-array:
-       // [
-       //   [x1, y1],
-       //   [x2, y2],
-       //   null,
-       //   [xn, xn],
-       // ];
-       // * * * * * * * * * *
-       lineGenerator = d3.line()
-        .defined(function(d) { return d !== null; })
-        .curve(d3.curveMonotoneX);
-
-        points = [];
-        for(let i=0; i<data.length; i+=1) {
-          points[i] = [];
-          points[i][0] = (toChartLeft + i * barWidth + barWidth/2);
-          points[i][1] = (toChartTop + yScale(+data[i].value)/1) ;
-        }
-
-        pathData = lineGenerator(points);
-
-        // Create a path element and set its d attribute
-        d3.select('path')
-          .attr('d', pathData);
-
-       // * * * * * * * * * *
        // create and append bars
        // * * * * * * * * * *
        bar = chart.selectAll('g')
@@ -175,7 +148,29 @@
        // * * * * * * * * * *
        // append line and dots
        // * * * * * * * * * *
-       let lineGraph = chart
+       // create line data
+       // as 2D-array:
+       // [
+       //   [x1, y1],
+       //   [x2, y2],
+       //   null,
+       //   [xn, xn],
+       // ];
+       // * * * * * * * * * *
+       lineGenerator = d3.line()
+        .defined(function(d) { return d !== null; })
+        .curve(d3.curveMonotoneX);
+
+        points = [];
+        for(let i=0; i<data.length; i+=1) {
+          points[i] = [];
+          points[i][0] = (toChartLeft + i * barWidth + barWidth/2);
+          points[i][1] = (toChartTop + yScale(+data[i].value)/1) ;
+        }
+
+        pathData = lineGenerator(points);
+
+       chart
           .append("path")
             .attr("d", pathData)
             .attr("class", "line");
@@ -185,7 +180,7 @@
          .enter()
           .append("circle")
            .attr("class", "dot")
-           .attr("cx", function(d, index) { return d[0]; })
+           .attr("cx", function(d) { return d[0]; })
            .attr("cy", function(d) { return d[1]; });
 
        // * * * * * * * * * *
