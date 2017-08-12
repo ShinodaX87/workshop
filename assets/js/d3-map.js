@@ -21,7 +21,25 @@
     features = svg.append('g').attr('class', 'features'),
     mercatorProjection = d3.geo.mercator(),
     path = d3.geo.path().projection(mercatorProjection),
-    socket = new WebSocket('ws://localhost:1337');
+    socket = new WebSocket('ws://localhost:1337'),
+    response = [
+        {
+          name: 'Stuttgart',
+          latitude: 48.775846,
+          longitude: 9.182932,
+          population: 500000
+        }, {
+          name: 'Köln',
+          latitude: 50.941278,
+          longitude: 6.958281,
+          population: 1000000
+        }, {
+          name: 'Berlin',
+          latitude: 52.521918,
+          longitude: 13.413215,
+          population: 3000000
+        }
+      ];
 
   d3.json('assets/data/bundeslaender_simplify200.geojson', function(error, data) {
 
@@ -50,33 +68,17 @@
     // where are the cities?
     // * * * * * * * * * *
     // // //
-    let response = [
-        {
-          name: 'Stuttgart',
-          latitude: 48.775846,
-          longitude: 9.182932,
-          population: 500000
-        }, {
-          name: 'Köln',
-          latitude: 50.941278,
-          longitude: 6.958281,
-          population: 1000000
-        }, {
-          name: 'Berlin',
-          latitude: 52.521918,
-          longitude: 13.413215,
-          population: 3000000
-        }
-      ],
-      locations = svg.append('g').attr('class', 'locations');
-//      console.log(response[0].name + ' at ' + response[0].longitude + ', ' + response[0].latitude);
+    let locations = svg.append('g').attr('class', 'locations');
+    response = [r];
+    // console.log(response[0].name + ' at ' + response[0].longitude + ', ' + response[0].latitude);
+    //response.push(r);
 
-    response.push(r);
-    console.log(response);
-    
-    d3.selectAll('circle.location').remove();
+    // delete all cities
+    // d3.selectAll('circle.location').remove();
 
+    // console.log(response.length);
 
+    // redraw cities
     locations.selectAll('circle')
       .data(response)
       .enter()
@@ -86,13 +88,14 @@
             radius = d.population / 100000,
 
             // somehow modify the draw coords
-            cx = mercatorProjection(location)[0],
-            cy = mercatorProjection(location)[1];
+            cx = mercatorProjection(location)[0], // latitude
+            cy = mercatorProjection(location)[1]; // longitude
 
-            // console.log(d.population);
+            console.log('[' + Math.round(cx) + ',' + Math.round(cy) + '] lat: ' + Math.round(d.latitude) + ', lon: ' + Math.round(d.longitude));
+            // console.log('[' + cx + ',' + cy + '], p: ' + d.population + ', c: ' + d.name + ', lat: ' + d.latitude + ', lon: ' + d.longitude);
             // console.log(radius);
 
-            // // linit the drawn city radius
+            // // limit the drawn city radius
             // if (radius < 2) radius = 2;
             // if (radius > 25) radius = 25;
 
@@ -115,9 +118,7 @@
   socket.onmessage = function(event) {
     // console.log('socket message!');
     // console.log(event.data);
-
     buildACity(JSON.parse(event.data));
-
   };
   // - - - - - - - - - -
 }());
