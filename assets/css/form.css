@@ -1,0 +1,48 @@
+/**
+ * form component
+ *
+ * @package responsive webdesign
+ * @author Michael [michael@zenbox.de]
+ * @since 2017/08/17
+ * @version v1.0.0
+ * @copyright (c) 2017 Michael Reichart, Cologne
+ * @license MIT License [https://opensource.org/licenses/MIT]
+ */
+
+
+/* base */
+
+
+/* all devices fallback */
+
+.dw-form {}
+
+@media screen and (max-width:767px) {
+  .dw-form {}
+}
+
+@media screen and (min-width:768px) {
+  .dw-form {}
+}
+
+@media screen and (min-width:992px) {
+  .dw-form {}
+}
+
+@media screen and (min-width:1200px) {
+  .dw-form {}
+}
+
+
+/* layout */
+
+.dw-form-horizontal .dw-fieldset, .dw-form-horizontal .dw-buttonset {
+  display: inline-block;
+}
+
+.dw-form-vertical .dw-fieldset, .dw-form-vertical .dw-buttonset {
+  display: block;
+}
+
+
+/* states */

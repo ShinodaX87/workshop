@@ -1,0 +1,52 @@
+/**
+ * fieldset component
+ *
+ * @package responsive webdesign
+ * @author Michael [michael@zenbox.de]
+ * @since 2017/08/17
+ * @version v1.0.0
+ * @copyright (c) 2017 Michael Reichart, Cologne
+ * @license MIT License [https://opensource.org/licenses/MIT]
+ */
+
+
+/* base */
+
+@media screen {}
+
+@media screen and (max-width:767px) {}
+
+@media screen and (min-width:768px) {}
+
+@media screen and (min-width:992px) {}
+
+@media screen and (min-width:1200px) {}
+
+
+/* layout */
+
+@media screen {
+  .dw-fieldset-horizontal>input, .dw-fieldset-horizontal>label, .dw-fieldset-horizontal>p {
+    display: inline-block;
+  }
+  .dw-fieldset-vertical>input, .dw-fieldset-vertical>label, .dw-fieldset-vertical>p {
+    display: block;
+  }
+}
+
+@media screen and (max-width:1023px) {
+  .dw-fieldset-vertical>input, .dw-fieldset-vertical>p {
+    display: block;
+    width: 100%;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+  .dw-fieldset-vertical>label, .dw-fieldset-vertical>header {
+    display: none;
+  }
+}
+
+@media screen and (min-width:1200px) {}
+
+
+/* states */

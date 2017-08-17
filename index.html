@@ -6,12 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>a simple responsive layout</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="/libraries/bootstrap-3.3.6/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/libraries/bootstrap-4.0.0-beta/dist/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="assets/css/base.css" />
     <!-- <link rel="stylesheet" href="assets/css/layout.css" /> -->
 
     <link rel="stylesheet" href="assets/css/navigation.css" />
+    <link rel="stylesheet" href="assets/css/form.css" />
+    <link rel="stylesheet" href="assets/css/fieldset.css" />
+    <link rel="stylesheet" href="assets/css/buttonset.css" />
 
     <link rel="stylesheet" href="assets/css/theme.css" />
   </head>
@@ -29,21 +34,21 @@
         <div class="dw-content-nav hidden-xs hidden-sm col-md-3">
 
           <!-- bootstrap navigation -->
-          <ul class="nav nav-pills nav-stacked">
-            <li class="active"><a href="#">link 1</a></li>
-            <li><a href="#">link 2</a></li>
-            <li><a href="#">link 3</a></li>
-            <li><a href="#">link 4</a></li>
+          <ul role="navigation" class="nav nav-pills nav-stacked">
+            <li role="presentation" class="active"><a href="#">link 1</a></li>
+            <li role="presentation"><a href="#">link 2</a></li>
+            <li role="presentation"><a href="#">link 3</a></li>
+            <li role="presentation"><a href="#">link 4</a></li>
           </ul>
           <!-- /bootstrap navigation -->
 
           <!-- dw navigation component -->
           <nav>
-            <ul class="dw-nav dw-nav-vertical">
-              <li><a href="#">link 1</a></li>
-              <li><a href="#">link 2</a></li>
-              <li><a href="#">link 3</a></li>
-              <li><a href="#">link 4</a></li>
+            <ul role="navigation" class="dw-nav dw-nav-vertical">
+              <li role="presentation"><a href="#">link 1</a></li>
+              <li role="presentation"><a href="#">link 2</a></li>
+              <li role="presentation"><a href="#">link 3</a></li>
+              <li role="presentation"><a href="#">link 4</a></li>
             </ul>
           </nav>
           <!-- /dw navigation component -->
@@ -54,14 +59,71 @@
 
 
         <div class="dw-content-main col-xs-12 col-sm-8 col-md-6">
-          <h1>main content</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-            irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <main>
+            <h1>main content</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+              irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </main>
         </div>
-        <div class="dw-content-aside hidden-xs col-sm-4 col-md-3">aside content</div>
+
+        <div class="dw-content-aside hidden-xs col-sm-4 col-md-3">
+          <aside>
+
+            <!-- login form component -->
+            <form id="form-login" class="dw-form dw-form-vertical" action="index.html" method="post">
+              <fieldset>
+                <legend>login</legend>
+
+                <fieldset class="dw-fieldset dw-fieldset-vertical">
+                  <label for="login-email">Email</label>
+                  <input id="login-email" type="email" name="email" value="" />
+                  <p>help text ipsum dolor.</p>
+                </fieldset>
+
+                <fieldset class="dw-fieldset dw-fieldset-vertical">
+                  <label for="login-password">Password</label>
+                  <input id="login-password" type="password" name="password" value="" />
+                </fieldset>
+
+                <fieldset class="dw-fieldset dx-fieldset-checkbox">
+                  <header>
+                    <h4>Lorem ipusm</h4>
+                    <time>today</time>
+                  </header>
+                  <input id="login-remind" type="checkbox" name="" value="">
+                  <label for="login-remind">keep the password</label>
+                </fieldset>
+
+                <fieldset class="dw-buttonset dw-buttonset-horizontal">
+                  <button type="submit" name="button">login</button>
+                  <button type="reset" name="button">logout</button>
+                </fieldset>
+
+              </fieldset>
+
+
+            </form>
+            <!-- /login form component -->
+
+          </aside>
+        </div>
 
       </div>
-      <div class="dw-page-footer row">footer</div>
+      <div class="dw-page-footer row">
+        <footer>
+          <!-- dw navigation component -->
+          <nav>
+            <ul role="navigation" class="dw-nav dw-nav-horizontal">
+              <li role="presentation"><a href="#">link 1</a></li>
+              <li role="presentation"><a href="#">link 2</a></li>
+              <li role="presentation"><a href="#">link 3</a></li>
+              <li role="presentation"><a href="#">link 4</a></li>
+            </ul>
+          </nav>
+          <!-- /dw navigation component -->
+
+        </footer>
+      </div>
 
     </div>
   </body>
