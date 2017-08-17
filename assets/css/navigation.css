@@ -1,0 +1,39 @@
+/**
+ * navigatino component styles
+ *
+ * @package responsive webdesign
+ * @author Michael [michael@zenbox.de]
+ * @since
+ * @version v1.0.0
+ * @copyright (c) 2017 Michael Reichart, Cologne
+ * @license MIT License [https://opensource.org/licenses/MIT]
+ */
+
+
+/* base classes */
+
+.dw-nav {
+  list-style-type: none;
+  margin-top: 0;
+  padding-left: 0;
+}
+
+
+/* layout classes */
+
+.dw-nav-horizontal li {
+  display: inline-block;
+}
+
+.dw-nav-vertical li {
+  display: block;
+}
+
+
+/* state classes */
+
+.dw-nav a[href]:hover {
+  background-color: hsla(360, 100%, 100%, 0.5);
+}
+
+.dw-nav__a[href]--active {}

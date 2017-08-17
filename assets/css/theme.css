@@ -1,0 +1,18 @@
+/**
+ * theme styles
+ *
+ * @package responsive webdesign
+ * @author Michael [michael@zenbox.de]
+ * @since 2017/08/16
+ * @version v1.0.0
+ * @copyright (c) 2017 Michael Reichart, Cologne
+ * @license MIT License [https://opensource.org/licenses/MIT]
+ */
+
+.page          { background : hsla(  0, 100%, 50%, 0.5);}
+.page-header   { background : hsla( 30, 100%, 50%, 0.5);}
+.page-content  { background : hsla( 60, 100%, 50%, 0.5);}
+.page-footer   { background : hsla( 90, 100%, 50%, 0.5);}
+.content-nav   { background : hsla(120, 100%, 50%, 0.5);}
+.content-main  { background : hsla(150, 100%, 50%, 0.5);}
+.content-aside { background : hsla(180, 100%, 50%, 0.5);}
