@@ -10,17 +10,23 @@
     <!-- <link rel="stylesheet" href="/libraries/bootstrap-3.3.6/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="/libraries/bootstrap-4.0.0-beta/dist/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="assets/css/base.css" />
-    <!-- <link rel="stylesheet" href="assets/css/layout.css" /> -->
+    <!-- <link rel="stylesheet" href="assets/css/base.css" /> -->
+    <!-- <link rel="stylesheet" href="assets/css/layout-flexbox.css" /> -->
 
     <link rel="stylesheet" href="assets/css/navigation.css" />
     <link rel="stylesheet" href="assets/css/form.css" />
     <link rel="stylesheet" href="assets/css/fieldset.css" />
     <link rel="stylesheet" href="assets/css/buttonset.css" />
+    <link rel="stylesheet" href="assets/css/images.css" />
+    <link rel="stylesheet" href="assets/css/svg.css" />
 
     <link rel="stylesheet" href="assets/css/fonts.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="assets/css/theme.css" />
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+
   </head>
 
   <body>
@@ -62,13 +68,63 @@
 
         <div class="dw-content-main col-xs-12 col-sm-8 col-md-6">
           <main>
-            <h1><span class="fa fa-cloud fa-1x" style="vertical-align:baseline;"></span> main content</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-              irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <article>
 
-            <h4>heading 4 ipsum dolor sit</h4>
-            <p>Integer posuere erat a ante venenatis<wbr>dapibusposuere velit aliquet. Donec id elit non mi porta gravida at eget metus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean lacinia bibendum nulla sed consectetur.
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+              <figure>
+                <picture class="img-responsive">
+                  <source srcset="http://placehold.it/540x204" media="(min-width:1200px)" />
+                  <source srcset="http://placehold.it/450x170" media="(min-width:992px)" />
+                  <source srcset="http://placehold.it/330x125" media="(min-width:768px)" />
+                  <source srcset="http://placehold.it/330x125" media="(min-width:576px)" />
+                  <source srcset="http://placehold.it/450x170" media="(min-width:480px)" />
+                  <source srcset="http://placehold.it/320x120" media="(max-width:320px)" />
+                  <!-- fallback image -->
+                  <img src="http://placehold.it/320x120" alt="" />
+                </picture>
+                <figcaption>about the media content Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</figcaption>
+              </figure>
+
+              <figure>
+
+                <svg width="400" height="400">
+                    <g transform="translate(200, 200) rotate(0) scale(1,1)">
+                      <circle r="100" cx="0" cy="0"></circle>
+                      <polygon points="-10,0 10,0 0,80" transform="rotate(108)"></polygon>
+                    </g>
+                </svg>
+
+                <script type="text/javascript">
+                  window.onload = function() {
+                    var svg = document.querySelector('svg'),
+                      needle = document.querySelector('svg polygon'),
+                      output = document.querySelector('output'),
+                      i = 0;
+
+                    setInterval(function() {
+                      needle.setAttribute('transform', 'rotate(' + i + ')');
+                      output.innerHTML = i;
+                      i++;
+                    }, 20);
+
+                    // create svg dynamically
+                    var rectangle = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                    rectangle.setAttribute('width', 50);
+                    rectangle.setAttribute('height', 50);
+                    svg.appendChild(rectangle)
+                  }
+                </script>
+
+                <figcaption><output name="result">108</output></figcaption>
+              </figure>
+
+              <h1><span class="fa fa-cloud fa-1x" style="vertical-align:baseline;"></span> main content</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+              <h4>heading 4 ipsum dolor sit</h4>
+              <p>Integer posuere erat a ante venenatis<wbr>dapibusposuere velit aliquet. Donec id elit non mi porta gravida at eget metus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean lacinia bibendum nulla sed consectetur.
+                Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+            </article>
           </main>
         </div>
 

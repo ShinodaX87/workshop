@@ -19,3 +19,13 @@ https://css-tricks.com/snippets/css/complete-guide-grid/
 https://www.bootstrapcdn.com/
 
 sketch, principle, zeplin
+
+http://adaptive-images.com/
+
+http://www.selfsvg.info/
+
+http://postcss.org/
+
+http://sass-lang.com/
+
+http://lesscss.org/
