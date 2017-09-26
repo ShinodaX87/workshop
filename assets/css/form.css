@@ -1,48 +1,48 @@
 /**
- * form component
+ * a form component
  *
  * @package responsive webdesign
  * @author Michael [michael@zenbox.de]
- * @since 2017/08/17
+ * @since 2017/09/26
  * @version v1.0.0
  * @copyright (c) 2017 Michael Reichart, Cologne
  * @license MIT License [https://opensource.org/licenses/MIT]
  */
 
 
-/* base */
+/* base   */
 
-
-/* all devices fallback */
-
-.dw-form {}
-
-@media screen and (max-width:767px) {
-  .dw-form {}
+@media screen {
+  .form {}
 }
 
-@media screen and (min-width:768px) {
-  .dw-form {}
-}
+@media screen and (max-width:767px) {}
 
-@media screen and (min-width:992px) {
-  .dw-form {}
-}
+@media screen and (min-width:768px) {}
 
-@media screen and (min-width:1200px) {
-  .dw-form {}
-}
+@media screen and (min-width:992px) {}
+
+@media screen and (min-width:1200px) {}
 
 
 /* layout */
 
-.dw-form-horizontal .dw-fieldset, .dw-form-horizontal .dw-buttonset {
-  display: inline-block;
+@media screen {
+  .form-vertical .fieldset {
+    display: block;
+  }
+  .form-horizontal .fieldset {
+    display: inline-block;
+  }
 }
 
-.dw-form-vertical .dw-fieldset, .dw-form-vertical .dw-buttonset {
-  display: block;
-}
+@media screen and (max-width:767px) {}
+
+@media screen and (min-width:768px) {}
+
+@media screen and (min-width:992px) {}
+
+@media screen and (min-width:1200px) {}
 
 
 /* states */

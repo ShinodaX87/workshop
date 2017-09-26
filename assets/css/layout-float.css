@@ -1,65 +1,75 @@
 /**
- *
+ * a floating layout
  *
  * @package responsive webdesign
  * @author Michael [michael@zenbox.de]
- * @since 2017/08/16
+ * @since 2017/09/25
  * @version v1.0.0
  * @copyright (c) 2017 Michael Reichart, Cologne
  * @license MIT License [https://opensource.org/licenses/MIT]
  */
 
+ /* linearized layout as a fallback for all devices and old browser */
+  .page          { display : block; width : 100%; }
+  .page-header   { display : block; width : 100%; }
+  .page-content  { display : block; width : 100%; }
+  .page-footer   { display : block; width : 100%; }
+  .content-nav   { display : block; width : 100%; }
+  .content-main  { display : block; width : 100%; }
+  .content-aside { display : block; width : 100%; }
 
-/* old devices fallback */
+/* mobile first approach */
 
-.page {
-  display: block;
-  width: 960px;
-  clear: both;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: auto;
-  margin-right: auto;
+/* xs devices */
+@media screen and (max-width:575px) {
+  .content-nav   { display : none; }
 }
 
-.page-header {
-  display: block;
-  width: 100%;
-  clear: both;
-}
 
-.page-content {
-  display: block;
-  width: 100%;
-  clear: both;
+/* small  devices */
+@media screen and (min-width : 576px) {
+  .page          {}
+  .page-header   {}
+  .page-content  {}
+  .page-footer   {}
+  .content-nav   {}
+  .content-main  {}
+  .content-aside {}
 }
-
-.page-footer {
-  display: block;
-  width: 100%;
-  clear: both;
+/* medium devices */
+@media screen and (min-width : 768px) {
+  .page          { display : block; width : 100%; clear : both; }
+  .page-header   { display : block; width : 100%; clear : both; }
+  .page-content  { display : block; width : 100%; clear : both; }
+  .page-footer   { display : block; width : 100%; clear : both; }
+  .content-nav   { display : none; }
+  .content-main  { display : block; width :  66%; float : left; }
+  .content-aside { display : block; width :  34%; float : left; }
 }
+/* large devices */
+@media screen and (min-width : 992px) {
+  .page          { display : block; width : 960px; clear : both; margin : 0 auto;}
+  .page-header   { display : block; width : 100%; clear : both; }
+  .page-content  { display : block; width : 100%; clear : both; }
+  .page-footer   { display : block; width : 100%; clear : both; }
+  .content-nav   { display : block; width :  25%; float : left; }
+  .content-main  { display : block; width :  50%; float : left; }
+  .content-aside { display : block; width :  25%; float : left; }
 
-.content-nav {
-  display: block;
-  width: 25%;
-  float: left;
+  .clearfix::before,
+  .clearfix::after {
+    content : "";
+    display : table;
+    clear : both;
+  }
 }
-
-.content-main {
-  display: block;
-  width: 50%;
-  float: left;
-}
-
-.content-aside {
-  display: block;
-  width: 25%;
-  float: left;
-}
-
-.content-nav::after, .content-nav::before, .content-main::after, .content-main::before, .content-aside::after, .content-aside::before {
-  content: "";
-  display: table;
-  height: 0;
+/* extra large  devices */
+@media screen and (min-width : 1200px) {
+  .page          { display : block; width : 1170px; clear : both; }
+  .page-header   {}
+  .page-content  {}
+  .page-footer   {}
+  .content-nav   {}
+  .content-main  {}
+  .content-aside {}
 }
