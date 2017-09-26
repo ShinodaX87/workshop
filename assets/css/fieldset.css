@@ -38,14 +38,14 @@
   .fieldset label {
     display: none;
   }
-  .fieldset input:placeholder {
+  .fieldset input::placeholder {
     color: lightsteelblue;
   }
 }
 
 @media screen and (min-width:768px) {
-  .fieldset input:placeholder {
-    color: transparent;
+  .fieldset input::placeholder {
+    color: lightcoral;
   }
 }
 
