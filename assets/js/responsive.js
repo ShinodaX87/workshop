@@ -1,6 +1,10 @@
 /* global console, window, document */
 /**
+<<<<<<< HEAD
  * responsive javascript examples
+=======
+ * responsive javascript
+>>>>>>> origin/master
  *
  * @package responsive webdesign
  * @author Michael [michael@zenbox.de]
