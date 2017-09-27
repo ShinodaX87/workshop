@@ -7,11 +7,14 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link rel="stylesheet" href="assets/css/base.css" />
+
     <link rel="stylesheet" href="assets/css/layout-flexbox.css" />
 
     <link rel="stylesheet" href="assets/css/navigation.css" />
     <link rel="stylesheet" href="assets/css/form.css" />
     <link rel="stylesheet" href="assets/css/fieldset.css" />
+    <link rel="stylesheet" href="assets/css/picture.css" />
 
     <link rel="stylesheet" href="assets/css/theme.css" />
 
@@ -43,11 +46,42 @@
         </div>
         <div class="content-main">
           <main>
-            main content
+
+            <figure>
+              <picture class="picture picture-responsive">
+                <source srcset="http://placehold.it/600x400" media="(min-width:992px)" />
+                <source srcset="http://placehold.it/496x330" media="(min-width:768px)" />
+                <source srcset="http://placehold.it/750x450" media="(min-width:576px)" />
+                <img src="http://placekitten.com/320/240" />
+              </picture>
+              <figcaption>a responsive image ...</figcaption>
+            </figure>
+
+
+            <script type="text/javascript">
+              console.log(navigator.userAgent);
+            </script>
+
+            <h1>Lorem ipsum dolor sit amet.</h1>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+              irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            <h2>Lorem ipsum dolor sit amet.</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+              irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            <h3>Lorem ipsum dolor sit amet.</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+              irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
           </main>
         </div>
         <div class="content-aside">
           <aside>
+
+
+            <span class="fa fa-pied-piper fa-4x"></span>
 
             <!-- a login form component -->
             <form class="form form-vertical" method="post">

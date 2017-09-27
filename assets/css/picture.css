@@ -1,0 +1,39 @@
+/**
+ * a picture component
+ *
+ * @package responsive webdesign
+ * @author Michael [michael@zenbox.de]
+ * @since 2017/09/26
+ * @version v1.0.0
+ * @copyright (c) 2017 Michael Reichart, Cologne
+ * @license MIT License [https://opensource.org/licenses/MIT]
+ */
+
+
+/* base   */
+
+@media screen {
+  .picture {}
+}
+
+@media screen and (max-width:767px) {}
+
+@media screen and (min-width:768px) {}
+
+@media screen and (min-width:992px) {}
+
+@media screen and (min-width:1200px) {}
+
+
+/* layout */
+
+@media screen {
+  .picture-responsive img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
+/* states */
