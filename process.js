@@ -17,6 +17,8 @@
       log    = require('logger/logger.js'),
       circle = require('./module.js');
 
+      log.prefix = 'PROCESS';
+
       console.log( circle.circumference(100) );
 
       log.asString('any value');
