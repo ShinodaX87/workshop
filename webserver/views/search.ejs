@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>search page</title>
+  </head>
+
+  <body>
+    <h1>searching ...</h1>
+
+    <form action="search.html" method="get">
+      <fieldset>
+        <legend>search</legend>
+        <label for="term">search term</label>
+        <input id="term" type="text" name="term" value="<%= term %>">
+        <button type="submit">search</button>
+      </fieldset>
+    </form>
+
+    <% if ( joke !== '') { %>
+      <p>
+        <%= joke %>
+      </p>
+      <% } else { %>
+        <p>no joke so far ...</p>
+        <% } %>
+  </body>
+
+</html>

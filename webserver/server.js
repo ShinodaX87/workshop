@@ -23,7 +23,12 @@ log.prefix    = 'WEBSERVER';
 // import {log} from './my_modules/logger/logger.js';
 
 // routes
-const indexRoute = require(path.join(__dirname, 'routes/index.js'));
+// static route as string
+const staticRoute = path.join(__dirname, 'public');
+
+// dynamic routes as modules
+const indexRoute  = require(path.join(__dirname, 'routes/index.js'));
+const searchRoute = require(path.join(__dirname, 'routes/search.js'));
 
 // declaration
 let
@@ -37,8 +42,13 @@ expressServer = express();
 expressServer.set('view engine', 'ejs');
 expressServer.set('views', path.join(__dirname, 'views') );
 
+// static routing
+expressServer.use( express.static(staticRoute) );
+
 // dynamic routes
-expressServer.use('/index.html', indexRoute);
+expressServer.use('/', indexRoute);
+expressServer.use('/index.html',  indexRoute);
+expressServer.use('/search.html', searchRoute);
 
 // start express
 expressServer.listen(port, function () {
