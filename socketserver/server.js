@@ -66,6 +66,8 @@ socketServer = socketio(httpServer);
 // socket control
 socketServer.sockets.on('connection', function (socket) {
 
+  log.asString('a client is connected');
+
   socket.on('myClientMessage', function (data) {
     log.asString(data);
   });
