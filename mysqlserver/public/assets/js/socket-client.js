@@ -25,18 +25,10 @@
 
   socket.on('connect', function() {
     console.log('socket connected!');
-
-    socket.emit('myClientMessage', 'a message from a client');
   });
 
   socket.on('myServerMessage', function(data) {
     console.log(data);
-  });
-
-  // adding broadcast messages into a DOM element
-  socket.on('myBroadcastServerMessage', function(data) {
-    console.log(data);
-    window.document.querySelector('output').innerHTML += data + '<br/>';
   });
 
   // sending messages
@@ -44,15 +36,13 @@
     // stop browser event processing
     event.preventDefault();
 
-    let message = window.document.querySelector('#message').value;
+    let username = window.document.querySelector('#username').value;
 
-    if (message !== '') {
-      socket.emit('anotherClientMessage', message);
+    if (username !== '') {
+      socket.emit('storeUsername', username);
     }
   });
 
 
   // - - - - - - - - - -
 }());
-
-// docker run -p dockerport:applicationport nameImage -d

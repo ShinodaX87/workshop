@@ -12,9 +12,12 @@
 
 'use strict';
 // - - - - - - - - - -
-const http = require('http');
-const path = require('path');
+const http     = require('http');
+const path     = require('path');
 const socketio = require('socket.io');
+const mysql    = require('mysql');
+const dbConfig = require('./db-config');
+dbConfig.database = dbConfig.more.database;
 
 // common js notation
 const express = require('express');
@@ -36,11 +39,12 @@ let
   expressServer = null,
   socketServer  = null,
   httpServer    = null,
-  port          = 3000;
+  port          = 3000,
+  db            = null;
 
 expressServer = express();
 httpServer = http.createServer(expressServer);
-
+db = mysql.createConnection(dbConfig)
 
 // configuration of express
 // template engine and directory
@@ -68,8 +72,11 @@ socketServer.sockets.on('connection', function (socket) {
 
   log.asString('a client is connected');
 
-  socket.on('myClientMessage', function (data) {
-    log.asString(data);
+  socket.on('storeUsername', function (data) {
+    let sql = "INSERT INTO user (username) VALUES ('" + data + "');";
+    db.query(sql, function (error) {
+      console.log('user stored!');
+    });
   });
 
   // sending a client message to all connected clients
