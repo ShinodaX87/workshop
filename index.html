@@ -1,3 +1,81 @@
-<h1>hello world</h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-  in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>HTML 5</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+
+  <body>
+
+    <header>
+      <img src="assets/figures/logo.png" title="" alt="an eagle flying - the company logo">
+    </header>
+
+    <div class="">
+
+      <!-- navigation component -->
+      <nav>
+        <ol role="navigation">
+          <li><a href="#">a linktext</a></li>
+          <li><a href="#">another linktext</a></li>
+          <li><a href="#">third linktext</a></li>
+        </ol>
+      </nav>
+      <!-- /navigation component -->
+
+      <main>
+        <article role="main">
+          <h2>headline ipsum dolor sit amet</h2>
+
+          <!-- non semantic elements -->
+          <span class="glyphicon glyphicon-envelope"></span>
+          <span><img src="assets/figures/icon.png" alt=""></span>
+          <!-- /non semantic elements -->
+
+        </article>
+
+        <!-- media content group -->
+        <figure>
+
+          <video src="assets/video/video.webm" autoplay>
+          </video>
+
+          <figcaption>
+            <p>text description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </figcaption>
+        </figure>
+        <!-- /media content group -->
+
+
+      </main>
+      <aside>
+        <article role="complementary">
+          <h3>headline ipsum</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </article>
+
+        <form action="index.html" method="post">
+
+          <fieldset>
+            <legend>login</legend>
+
+            <fieldset>
+              <!-- aria - Accessablity for Rich Internet Application -->
+              <label aria-label="login-email" for="login-email"><u aria-accesskey="login-email">E</u>mail</label>
+              <input aria-labeledby="login-email" id="login-email" type="email" accesskey="e" tabindex="1">
+              <p>helptext ipsum dolor sit</p>
+            </fieldset>
+
+          </fieldset>
+
+        </form>
+      </aside>
+    </div>
+
+
+  </body>
+
+</html>
