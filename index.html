@@ -47,6 +47,8 @@
     border: 1px solid white;
     box-shadow: 10px 10px 10px cornflowerblue;
     transition: all 3s ease-in-out;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
   .turned {
     transform: rotate(5turn);
@@ -73,7 +75,30 @@
         </figure>
         <!-- /media content group -->
 
+        <canvas id="canvas" width="300" height="300"></canvas>
+        <p id="demo">demo</p>
+        <script type="text/javascript">
+          let myCanvas = document.querySelector('#canvas');
+          let myContext = myCanvas.getContext('2d');
 
+          myContext.fillRect(20, 20, 100, 100);
+        </script>
+        <script type="text/javascript">
+          var x = document.getElementById("demo");
+
+          function getLocation() {
+            if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+              x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+          }
+
+          function showPosition(position) {
+            x.innerHTML = "Latitude: " + position.coords.latitude +
+              "<br>Longitude: " + position.coords.longitude;
+          }
+        </script>
       </main>
       <aside>
         <article role="complementary">
@@ -99,7 +124,40 @@
       </aside>
     </div>
 
+    <script type="text/javascript">
+      (function() {
+        'use strict';
 
+        // network state true || false
+        console.log(window.navigator.onLine);
+
+        window.localStorage.removeItem('networkState');
+
+        // network state events
+        window.addEventListener('online', function() {
+          console.log('is online!');
+          let socket = new WebSocket('ws://echo.websocket.org');
+
+          let data = {
+            networkState: true,
+            otherState: false
+          };
+          window.localStorage.setItem('states', JSON.stringify(data));
+          if (socket) {
+            ' im online!'
+          };
+        });
+        window.addEventListener('offline', function() {
+          console.log('is offline!');
+          let data = {
+            networkState: false,
+            otherState: true
+          };
+          window.localStorage.setItem('states', JSON.stringify(data));
+        });
+
+      }());
+    </script>
   </body>
 
 </html>
