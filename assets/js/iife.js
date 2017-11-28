@@ -23,8 +23,6 @@
        console.log(message);
      }
 
-
-
 // - - - - - - - - - -
   window.capitan = capitan || {};
   window.capitan.log = _fn.log;
