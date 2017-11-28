@@ -10,16 +10,43 @@
   <body>
     <h1>Lorem ipsum dolor</h1>
 
-    <nav>
+    <nav id="navigation-main">
       <ul>
-        <li><a href="http://google.de">a link</a></li>
+        <li><a href="http://google.de">a link 1</a></li>
+        <li><a href="http://google.de">a link 2</a></li>
+        <li><a href="http://google.de">a link 3</a></li>
       </ul>
     </nav>
 
-    <button id="my-button" type="button" name="button">remove</button>
-    <button id="my-other-button" type="button" name="button">change</button>
+    <aside id="result">
+      <form id="form-login" class="" action="login.php" method="post">
+        <fieldset>
+          <legend>Login</legend>
 
-    <script src="assets/js/dom-manipulation.js" charset="utf-8"></script>
+          <fieldset>
+            <label for="login-email">Email</label>
+            <input id="login-email" type="email" name="email" value="michael@zenbox.de">
+          </fieldset>
+
+          <fieldset>
+            <label for="login-password">Password</label>
+            <input id="login-password" type="password" name="password" value="geheim">
+          </fieldset>
+
+          <button type="submit">log in</button>
+
+        </fieldset>
+      </form>
+    </aside>
+
+
+    <aside>
+      <button id="my-button" type="button" name="button">remove</button>
+      <button id="my-other-button" type="button" name="button">change</button>
+    </aside>
+    <script src="assets/js/module-login.js" charset="utf-8"></script>
+    <script src="assets/js/module-navigation.js" charset="utf-8"></script>
+    <script src="assets/js/ajax.js" charset="utf-8"></script>
   </body>
 
 </html>
