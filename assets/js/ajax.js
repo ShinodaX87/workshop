@@ -60,3 +60,15 @@
 
   // - - - - - - - - - -
 }());
+
+// AJAX requests with jQuery
+// let request = $.ajax(url);
+// let request = $.ajax({
+//   method : 'post';
+//   url : url
+// });
+//
+// request
+//   .done(function (response) { console.log(response); })
+//   .fail( function (error) { console.log(error); })
+//   .always( function () { console.log('always'); } )
