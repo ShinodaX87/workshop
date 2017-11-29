@@ -1,9 +1,10 @@
 /* global console, window, document */
 /**
- * Immediate Invoked FunctionExpression
+ * Immediate Invoked Function Expression
  *
  * @package Advanced Javascript
  * @author Michael [michael@zenbox.de]
+ * @author Nils
  * @since 2017/11/29
  * @version v1.0.0
  * @copyright (c) 2017 Michael Reichart, Cologne
@@ -11,15 +12,22 @@
  */
 
 (function () {
-  'use strict';
-  // - - - - - - - - - -
   // DECLARATION
-  let init = null;
+  let
+    a, // primitive values: number, string
+    b = false,
+
+    arr = [],
+    obj = {},
+
+    fn = null,
+    init = null;
 
   // METHODS
-  init = function () {};
+  init = function () {
+    console.log('runs');
+  };
 
   // CONTROL
   window.addEventListener('load', init);
-  // - - - - - - - - - -
 }());
