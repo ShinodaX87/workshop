@@ -26,23 +26,23 @@
 
 // primitive value types
 // call by value!
-var a = 42;       // integer => 64bit
-console.log( typeof(a) );
-var b = 3.14152;  // float => 64bit
-console.log( typeof(b) );
+let a = 42;       // integer => 64bit
+console.log(typeof(a));
+let b = 3.14152;  // float => 64bit
+console.log(typeof(b));
 
-var c = false;     // boolean => 1bit
-console.log( typeof(c) );
+let c = false;     // boolean => 1bit
+console.log(typeof(c));
 
-var d = "hello world";
-var e = 'hello world';
-console.log( typeof(e) ); // string => utf-16 character
+let d = "hello world";
+let e = 'hello world';
+console.log(typeof(e)); // string => utf-16 character
 
 a = 'a new value';
-console.log( typeof(a) );
+console.log(typeof(a));
 
 // ES5
-var f=5;       // function scope
+let f=5;       // function scope
 
 
 // ES6-8
@@ -63,8 +63,8 @@ log();
 // Javascript functions
 function log () {
   // function scoped values
-  var a = 42;
-  var b;
+  let a = 42;
+  let b;
 
 // control scoped value i
   for (let i=0; i<10;i++) {
@@ -74,7 +74,7 @@ function log () {
 
   // console.log(i);
 
-  if ( a === 42) {
+  if (a === 42) {
     a = 43;
     return 'is nice';
   } else {
@@ -89,19 +89,19 @@ log();
 
 
 
-console.log( typeof(log) );
+console.log(typeof(log));
 // data types and function (complex value types)
 // call by reference!
 // arrays
-var array = [1, 2, 3];
-console.log( typeof(array) );
+let array = [1, 2, 3];
+console.log(typeof(array));
 
-console.log( array[0] );
-console.log( array[1] );
-console.log( array[2] );
+console.log(array[0]);
+console.log(array[1]);
+console.log(array[2]);
 
 for (let i=0; i<array.length; i+=1) {
-  console.log( array[i] );
+  console.log(array[i]);
 }
 
 // objects
@@ -110,15 +110,15 @@ var object = {
   hans : 1,
   peter : 2, key3 : 3,
   "key 4" : "value" };
-console.log( typeof(object) );
+console.log(typeof(object));
 
-for ( let key in object ) {
+for (let key in object) {
   console.log(key);
-  console.log( object[key] );
+  console.log(object[key]);
 }
 
-console.log( object.key1 );
-console.log( object["key 4"] );
+console.log(object.key1);
+console.log(object["key 4"]);
 
 // common JSON
 var object = { "key1" : 1, "key2" : 2, "key3" : 3, "key 4" : "value" };
@@ -137,43 +137,43 @@ var object = { "key1" : 1, "key2" : 2, "key3" : 3, "key 4" : "value" };
 
 let flag = true;
 // value comparison
-if ( flag == true && typeof(flag) == 'boolean') {}
+if (flag == true && typeof(flag) == 'boolean') {}
 
 // type AND value comparison
-if ( flag === true ) {}
+if (flag === true) {}
 
 
 1 == true == '1';
 
 // historic
 
-var text = new String();
-var num  = new Number();
-var bool  = new Boolean();
+let text = new String();
+let num  = new Number();
+let bool  = new Boolean();
 
-console.log( typeof(text) );
+console.log(typeof(text));
 
 
 // function objects
 // function fn () {}
-var fn = function (arg) {
+let fn = function (arg) {
   arg = 'something';
   console.log(arg);
 };
 
-var h = 'hello world';
+let h = 'hello world';
 
 fn(h);
-console.log( fn );
+console.log(fn);
 
 
 
 fn = function (obj) {
   obj = null;
   console.log(obj);
-}
+};
 
-var globalObject = { hans : "Peter"};
+let globalObject = { hans : "Peter"};
 fn(globalObject);
 
 

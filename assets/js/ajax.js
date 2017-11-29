@@ -16,7 +16,7 @@
   // ES3, Javascript (MS<9: ActiveXObject)
   // DECLARATION
   let xhr = new XMLHttpRequest(),
-    data = {
+  data = {
       email: 'michael@zenbox.de',
       password: 'geheim'
     },
@@ -38,7 +38,7 @@
       console.log('reponse head and data');
         if (xhr.status === 200 || xhr.status === 304) {
           console.log('yes, everything\'s alright!');
-        } else if ( xhr.status === 404) {
+        } else if (xhr.status === 404) {
           console.log('file not found!');
         }
         break;
