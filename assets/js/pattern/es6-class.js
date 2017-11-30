@@ -14,13 +14,13 @@
   'use strict';
   // - - - - - - - - - _
   /**
-   * [Shape description]
+   * A Simple Shape Class
    */
   class Shape {
-
     /**
-     * [id description]
-     * @type {[type]}
+     * @param string id
+     * @param number x
+     * @param number y
      */
     constructor(id, x, y) {
       this.id = id || undefined;
@@ -28,8 +28,10 @@
       this.y = y || 0;
     }
     /**
-     * [move description]
-     * @return {[type]} [description]
+     * changes the coors of a shape
+     * @param number x
+     * @param number y
+     * @return none
      */
     move(x, y) {
       this.x = x;
