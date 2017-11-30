@@ -17,9 +17,48 @@
   let get = null;
 
   // METHODS
-  get = function () {};
+  get = function (url) {
+    return new Promise(function (resolve, reject) {
+      // - - - - - - - - - - -
+      let request = new XMLHttpRequest();
+
+      request.open('GET', url);
+
+      // readyState == 4
+      request.onload = function () {
+        switch (request.status) {
+        case 200:
+          // do something to reach a resolve value
+          // ...
+          resolve(request.response);
+          break;
+        case 404:
+        case 501:
+        default:
+          // do something to reach a reject value
+          //  ...
+          reject(Error(request.statusText));
+          break;
+        }
+
+      };
+      // network error
+      request.onerror = function () {};
+
+      request.send();
+      // - - - - - - - - - - -
+    });
+  };
 
   // CONTROL
-  get('story.json');
+  get('_story.json')
+    // resolve/success
+    .then(function (response) {
+      console.log('promise fulfilled!', response);
+    })
+    // reject/error
+    .catch(function (error) {
+      console.error('promise rejected!', error);
+    });
   // - - - - - - - - - -
 }());
