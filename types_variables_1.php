@@ -52,6 +52,28 @@ echo '<br>';
 echo $integer;
 echo '<br>';
 echo $float;
+echo '<br>';
+$a = 0.1000; $b=0.2; $c=0.3;
+
+echo(($a + $b) + $c === $a + ($b + $c));
+echo $a;
+echo '<br>type of $a: ';
+echo gettype($a);
+echo $b;
+echo $c;
+
+// Ganzzahlen und Fließkommazahlen
+// int a = 42;
+$a = 42;
+echo '<br>type of $a: ';
+echo gettype($a);
+
+
+$string = "1";
+$number = 1;
+$boolean = true;
+echo '<br>';
+echo $string === $number; // Typen-Werte-Vergleich mit 3 Gleichheitszeichen ist Pflicht!!
 ?>
 </body>
 </html>
