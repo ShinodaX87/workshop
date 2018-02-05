@@ -1,4 +1,4 @@
-Aufgabe:
+# Aufgabe 1:
 
 Sie haben eine Liste von mehreren Teilnehmern:
 
