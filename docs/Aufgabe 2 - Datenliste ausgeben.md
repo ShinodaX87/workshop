@@ -1,5 +1,7 @@
 # Die Liste aller User ausgeben
 
+GET-Requests sind unsicher, ändern Sie den den Requesttyp auf POST.
+
 Wenn der User sich erfolgreich angemeldet hat, soll ein "Hallo, Username" als Begrüßung ausgegeben werden (Denken Sie sich was Nettes aus) und im Anschluß die Liste aller User, die in der Datenbank stehen.
 
 Eine aufsteigend sortierte Ausgabe kann man per SQL erzeugen "SELECT * FROM ... WHERE ... ORDER BY username ASC;"
