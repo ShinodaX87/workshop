@@ -14,6 +14,6 @@ function pruefe($value)
     return false;
 }
 
-function andereFuntion()
+function andereFunktion()
 {
 }
