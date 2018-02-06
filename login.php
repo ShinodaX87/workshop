@@ -15,10 +15,56 @@
   // wenn gültige Eingaben geliefert sind
   if ($email !== false && $password !== false) {
       // Verbindung zur Datenbank herstellen
-      $link = mysqli_connect();
+      $host     = 'localhost';   // '20.1.173.237';
+      $user     = 'root';        // 'schule10';
+      $passwd   = 'root';        // 'hallo1';
+      $database = 'application'; // 'application';
+      try {
+          $link = mysqli_connect($host, $user, $passwd);
+          mysqli_select_db($link, $database);
+      } catch (Exception $error) {
+          die('Aaaarghhhhhh!');
+      }
 
+      // Datensatz mit den Anmeldedaten erfragen
+      $sql = "
+        SELECT
+          username, email, password
+        FROM
+          user
+        WHERE
+          email = '$email'
+        AND
+          password = '$password'
+        ;
+      ";
 
-      //$result = frageDatenbank($email);
+      $result = mysqli_query($link, $sql);
+
+      // wenn genau ein Datensatz gefunden wird
+      if ($result->num_rows === 1) {
+          $isLogin = true;
+          $row = mysqli_fetch_assoc($result);
+          $dataUsername = $row['username'];
+          $dataEmail    = $row['email'];
+          $dataPassword = $row['password'];
+      } else {
+          $isLogin = false;
+      }
+
+      // // Alle Daten erfragen
+      // $sql = "SELECT * FROM user;";
+      // $result = mysqli_query($link, $sql);
+      //
+      // // Daten lesbar machen
+      // while ($row = mysqli_fetch_assoc($result)) {
+      //     // Einzelne Zeile als Array ausgeben
+      //   // Schnellausgabe
+      //   // var_dump($row);
+      //   //  echo '<br>';
+      //   echo $row['username'];
+      //     echo '<br/>';
+      // }
   }
 
 ?>
@@ -30,6 +76,8 @@
   </head>
   <body>
 
+    <?php if ($isLogin !== true) {
+    ?>
     <!-- Formular bei Erstaufruf -->
     <h1>Login</h1>
 
@@ -50,13 +98,19 @@
 
     </form>
     <!-- /Formular bei Erstaufruf -->
+<?php 
+} ?>
 
+<?php if ($isLogin === true) {
+    ?>
     <!-- Ergebnis bei Login -->
     <h1>Greetings</h1>
     <ul>
       <li>Hallo User ...</li>
     </ul>
     <!-- /Ergebnis bei Login -->
+<?php
 
+} ?>
   </body>
 </html>
