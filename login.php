@@ -14,11 +14,15 @@
 
   // wenn gültige Eingaben geliefert sind
   if ($email !== false && $password !== false) {
+      // Verbindung zur Datenbank herstellen
+      $link = mysqli_connect();
+
+
       //$result = frageDatenbank($email);
   }
 
 ?>
-<!DOCTYPE html>
+<!DOCTYPE html><!-- 5ffVk9Fl_PlO -->
 <html>
   <head>
     <meta charset="utf-8">
