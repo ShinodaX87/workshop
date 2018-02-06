@@ -52,19 +52,9 @@
           $isLogin = false;
       }
 
-      // // Alle Daten erfragen
-      // $sql = "SELECT * FROM user;";
-      // $result = mysqli_query($link, $sql);
-      //
-      // // Daten lesbar machen
-      // while ($row = mysqli_fetch_assoc($result)) {
-      //     // Einzelne Zeile als Array ausgeben
-      //   // Schnellausgabe
-      //   // var_dump($row);
-      //   //  echo '<br>';
-      //   echo $row['username'];
-      //     echo '<br/>';
-      // }
+      // Alle Daten erfragen
+      $sql = "SELECT * FROM user WHERE 1 ORDER BY username ASC;";
+      $result = mysqli_query($link, $sql);
   }
 
 ?>
@@ -98,7 +88,8 @@
 
     </form>
     <!-- /Formular bei Erstaufruf -->
-<?php 
+<?php
+
 } ?>
 
 <?php if ($isLogin === true) {
@@ -106,11 +97,28 @@
     <!-- Ergebnis bei Login -->
     <h1>Greetings</h1>
     <ul>
-      <li>Hallo User ...</li>
+      <li><?php echo "Hallo " . $dataUsername; ?></li>
     </ul>
     <!-- /Ergebnis bei Login -->
+
+    <!-- Liste der Benutzer -->
+    <ul>
+      <?php
+      while ($row = mysqli_fetch_assoc($result)) {
+          ?>
+    <li><?php echo $row['username']; ?></li>
+    <?php
+
+      } ?>
+    </ul>
+    <!-- /Liste der Benutzer -->
+
 <?php
 
 } ?>
+
+
+
+
   </body>
 </html>
