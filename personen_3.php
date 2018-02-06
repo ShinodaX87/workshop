@@ -32,7 +32,7 @@ $personen = [
     <ul>
       <?php for ($index=0; $index<count($personen); $index+=1) {
     ?>
-      <li><?php print $personen[$index]['name']; ?> (<?php echo 2018 - $personen[$index]['geburtsJahr']; ?>)</li>
+      <li><?php print $personen[$index]['name']; ?> (<?php echo date('Y') - $personen[$index]['geburtsJahr']; ?>)</li>
     <?php
 
 } ?>
