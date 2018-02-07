@@ -1,0 +1,57 @@
+/**
+ * filter stylesheet
+ *
+ * @package Webapplication
+ * @author Michael [michael@zenbox.de]
+ * @since 2018/02/07
+ * @version v1.0.0
+ * @copyright (c) 2017 Michael Reichart, Cologne
+ * @license MIT License [https://opensource.org/licenses/MIT]
+ */
+
+/* base styles */
+
+@media screen and (max-width:767px) {
+  #wh-filter-mobile {
+    display: block;
+  }
+  #wh-filter-desktop {
+    display: none;
+  }
+}
+
+@media screen and (min-width:768px) {
+  #wh-filter-mobile {
+    display: none;
+  }
+  #wh-filter-desktop {
+    display: block;
+  }
+}
+
+/* layout styles
+   display, margins, paddings, width, height, float, clear, flex */
+
+#wh-filter-desktop .wh-row, #wh-filter-mobile .wh-row {
+  display: block;
+  width: 100%;
+  clear: both;
+}
+
+#wh-filter-desktop .wh-col-20 {
+  display: block;
+  width: 20%;
+  float: left;
+}
+
+/* states */
+
+/* themes */
+
+#wh-filter-mobile {
+  background-color: hsla(180, 100%, 50%, 0.5);
+}
+
+#wh-filter-desktop {
+  background-color: hsla(0, 100%, 50%, 0.5) !important;
+}
