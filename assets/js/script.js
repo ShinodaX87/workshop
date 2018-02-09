@@ -21,14 +21,11 @@
     responseData = {};
 
   // methods
-  ajax = function (url, dataType) {
+  ajax = function (url, d, dataType) {
     // declaration
     let request = new XMLHttpRequest(),
       onReadyStateChange = null,
-      data = {};
-
-    data.email = 'michael@zenbox.de';
-    data.password = 'hallo!';
+      data = d;
 
     // methods
     onReadyStateChange = function () {
@@ -89,12 +86,21 @@
 
   onLoginFormSubmit = function (event) {
     // declaration
-    let url = event.target.action;
+    let url = event.target.action,
+      data = {};
+
     // stoppt die Browserverarbeitung des Ereignisses
     event.preventDefault();
 
+    // Daten aus dem Formular lesen
+    data.email = document.querySelector('#form-login #login-email')
+      .value;
+    data.email = document.querySelector('#form-login #login-password')
+      .value;
+
+
     // tue das nächste
-    ajax(url, 'json');
+    ajax(url, data, 'json');
   };
 
   // control, event control
