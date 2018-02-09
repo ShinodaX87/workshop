@@ -17,11 +17,26 @@
   let
     loginForm = document.querySelector('#form-login'),
     onLoginFormSubmit = null,
+    onNavMainClick,
     ajax = null,
+    addToDom = null,
     responseData = {};
 
   // methods
-  ajax = function (url, d, dataType) {
+  addToDom = function (dataObject, context) {
+    console.log(dataObject);
+    console.log(context);
+
+    let collection = document.querySelectorAll(context);
+    for (let i = 0; i < collection.length; i++) {
+      collection[i].innerHTML = dataObject.username;
+    }
+
+    // document.querySelector(context)
+    //   .innerHTML = dataObject.username;
+  };
+
+  ajax = function (url, d, dataType, trigger) {
     // declaration
     let request = new XMLHttpRequest(),
       onReadyStateChange = null,
@@ -54,8 +69,9 @@
 
           if (dataType === 'json') {
             responseData = JSON.parse(request.responseText);
-            console.table(responseData);
+            addToDom(responseData, trigger.dataset['context']);
           }
+
         }
         break;
       }
@@ -100,12 +116,27 @@
 
 
     // tue das nächste
-    ajax(url, data, 'json');
+    ajax(url, data, 'json', event.target);
+  };
+
+  onNavMainClick = function (event) {
+    switch (event.target.tagName) {
+    case 'A':
+      // do something
+      break;
+    case 'LI':
+      // do nothing
+      break;
+    case 'B':
+      // do nothing
+      break;
+    }
   };
 
   // control, event control
   loginForm.addEventListener('submit', onLoginFormSubmit);
-
+  document.querySelector('#nav-main')
+    .addEventListener('click', onNavMainClick);
   // propagation
   // - - - - - - - - - -
 }());

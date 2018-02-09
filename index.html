@@ -19,10 +19,10 @@
         <div class="content-nav">
           <!-- navigation component -->
           <nav>
-            <ul role="navigation" class="nav nav-vertical">
+            <ul id="nav-main" role="navigation" class="nav nav-vertical">
               <li role="presentation"><a href="page-1.html" id="my-navi-1">page 1</a></li>
               <li role="presentation"><a href="page-2.html" id="my-navi-2">page 2</a></li>
-              <li role="presentation"><a href="page-3.html" id="my-navi-3">page 3</a></li>
+              <li role="presentation"><a href="page-3.html" id="my-navi-3"><b>page 3</b></a></li>
             </ul>
           </nav>
           <!-- /navigation component -->
@@ -41,7 +41,7 @@
         <div class="content-aside">
 
           <!-- form component -->
-          <form id="form-login" action="login.json">
+          <form data-context="#message" id="form-login" action="login.json">
             <div class="form-group">
               <label for="login-email">Email address</label>
               <input id="login-email" type="email" name="email" value="michael@zenbox.de" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -58,6 +58,7 @@
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
           <!-- /form component -->
+          <aside id="message">nichts</aside>
 
         </div>
       </div>
