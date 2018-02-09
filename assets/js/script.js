@@ -9,7 +9,7 @@
  * @copyright (c) 2017 Michael Reichart, Cologne
  * @license MIT License [https://opensource.org/licenses/MIT]
  */
-
+// IIFE - Immediate Invoked Function Expression
 (function () {
   'use strict';
   // - - - - - - - - - -
@@ -32,3 +32,17 @@
   // propagation
   // - - - - - - - - - -
 }());
+
+// wie addEventListener arbeitet
+// domObject.addEventListener = function (type, callback) {
+//   let event = {
+//     type : type,
+//     timeStamp : new date(),
+//     target : domObject // this
+//     preventDefault : function () { return false; },
+//     isPrevented : false;
+//     ...
+//   };
+//
+//   callback(event);
+// }
