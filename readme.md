@@ -1,4 +1,4 @@
-#Code SNIPPETS
+# Code Snippets
 
 '''
 # - - - - - - - - - -
