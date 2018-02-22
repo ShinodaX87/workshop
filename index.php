@@ -34,7 +34,6 @@ $arguments = array(
 
 // instantiating an object from a class
 $user = new User($arguments);
-
 // $user = new User($username, $email, $password, $lastLogin, $surname, $lastname);
 
 // late setting a property's value

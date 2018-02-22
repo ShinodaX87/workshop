@@ -1,4 +1,34 @@
-<!DOCTYPE html>
+<?php
+/**
+ * Control for Login
+ * @desc gets login data,
+ *       checks for a valid user in database
+ *       and builds some greetings
+ *
+ * @package Webapplication
+ * @author Michael [michael@zenbox.de]
+ * @since 2018/02/22
+ * @version v1.0.0
+ * @copyright (c) 2018 Michael Reichart, Cologne
+ * @license MIT License [https://opensource.org/licenses/MIT]
+ */
+
+  // include classes
+  require_once('app/classes/Db.php');
+  require_once('app/classes/User.php');
+
+  // receive the form values
+  $email    = $_POST['email'];
+  $password = $_POST['password'];
+
+  // look in database
+  $sql = "SELECT * FROM user WHERE email='$email' AND password='$password';";
+
+  // create a database object
+  $db = new Db();
+  $db->query($sql);
+
+?><!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
