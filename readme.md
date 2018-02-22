@@ -1,6 +1,6 @@
 # Code Snippets
 
-'''
+```coffeescript
 # - - - - - - - - - -
 # COMPONENTS FOR PHP
 # - - - - - - - - - -
@@ -48,4 +48,4 @@
             return $this->property;
           }
     """
-'''
+```
