@@ -12,24 +12,55 @@
 class User
 {
     // properties
-    private $property  = null;
     private $username  = null;
     private $email     = null;
     private $password  = null;
     private $lastLogin = null;
     private $surname   = null;
     private $lastname  = null;
-    private $location  = null;
-    private $role      = null;
 
     // - - - - - - - - - -
     // magic methods
     // - - - - - - - - - -
-    public function __construct($s = null)
+
+
+
+    /**
+     * [__construct description]
+     * @param string $username  [description]
+     * @param string $email     [description]
+     * @param string $password  [description]
+     * @param string $lastLogin [description]
+     * @param string $surname   [description]
+     * @param string $lastname  [description]
+     */
+    // public function __construct(
+    //   $username  = null,
+    //   $email     = null,
+    //   $password  = null,
+    //   $lastLogin = null,
+    //   $surname   = null,
+    //   $lastname  = null
+    // ) {
+    //     $this->setUsername($username);
+    //     $this->setEmail($email);
+    //     $this->setPassword($password);
+    //     $this->setLastLogin($lastLogin);
+    //     $this->setSurname($surname);
+    //     $this->setLastname($lastname);
+    // }
+
+    public function __construct($arguments)
     {
-        if (!empty($s)) {
-            $this->surname = $s;
-        }
+        // foreach ($arguments as $key=>$argument) {
+        //     eval('$this->set' . ucfirst($key) . '(\'' . $argument . '\');');
+        // }
+        $this->setUsername($arguments['username']);
+        $this->setEmail($arguments['email']);
+        $this->setPassword($arguments['password']);
+        $this->setLastLogin($arguments['lastLogin']);
+        $this->setSurname($arguments['surname']);
+        $this->setLastname($arguments['lastname']);
     }
 
     public function __destruct()
@@ -44,39 +75,150 @@ class User
         return true;
     }
 
-    // - - - - - - - - - -
-    // getter and setter
-    // - - - - - - - - - -
+
     /**
-     * Getter For Property
-     * @return string returns the user surname
+     * Get the value of A User Class
+     *
+     * @return string
      */
-    public function getProperty ()
+    public function getUsername()
     {
-        return $this->property;
+        return $this->username;
     }
+
+
     /**
-     * Setter For Property
-     * @param string $argument the users surname
+     * Set the value of A User Class
+     *
+     * @param string username
+     *
+     * @return self
      */
-    public function setProperty ($argument = null)
+    public function setUsername($username)
     {
-      $this->property = $argument;
+        if (!empty($username)) {
+            $this->username = $username;
+        }
+        return $this;
     }
 
-
-
-
-    public function getSurname () {
-      if ($this->role === 'default') return $this->surname;
-      return false;
-    }
-
-    public function setSurname ($argument = null)
+    /**
+     * Get the value of Email
+     *
+     * @return string
+     */
+    public function getEmail()
     {
-      if (!empty($argument) && is_string($argument)) {
-        $this->surname = trim($argument);
+        return $this->email;
     }
 
+    /**
+     * Set the value of Email
+     *
+     * @param string email
+     *
+     * @return self
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
 
+        return $this;
+    }
+
+    /**
+     * Get the value of Password
+     *
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * Set the value of Password
+     *
+     * @param string password
+     *
+     * @return self
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Last Login
+     *
+     * @return string
+     */
+    public function getLastLogin()
+    {
+        return $this->lastLogin;
+    }
+
+    /**
+     * Set the value of Last Login
+     *
+     * @param string lastLogin
+     *
+     * @return self
+     */
+    public function setLastLogin($lastLogin)
+    {
+        $this->lastLogin = $lastLogin;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Surname
+     *
+     * @return string
+     */
+    public function getSurname()
+    {
+        return $this->surname;
+    }
+
+    /**
+     * Set the value of Surname
+     *
+     * @param string surname
+     *
+     * @return self
+     */
+    public function setSurname($surname)
+    {
+        $this->surname = $surname;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Lastname
+     *
+     * @return string
+     */
+    public function getLastname()
+    {
+        return $this->lastname;
+    }
+
+    /**
+     * Set the value of Lastname
+     *
+     * @param string lastname
+     *
+     * @return self
+     */
+    public function setLastname($lastname)
+    {
+        $this->lastname = $lastname;
+
+        return $this;
+    }
 }
