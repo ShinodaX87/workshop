@@ -16,31 +16,77 @@ class Db
     private $username = null;
     private $password = null;
     private $database = null;
-    private $link     = null;
+    public $link     = null;
 
   // magic methods
   public function __construct()
   {
-      $this->host     = 'localhost';
-      $this->username = 'root';
-      $this->password = 'root';
-      $this->database = 'application';
+      $this->setHost('localhost');
+      $this->setUsername('root');
+      $this->setPassword('root');
+      $this->setDatabase('application');
 
       $this->connectDb();
   }
 
   // own methods
-  private function connectDb()
+  protected function connectDb()
   {
+      try {
+          $this->setLink(true);
+          return true;
+      } catch (Exception $error) {
+          var_dump($error);
+      }
   }
 
-    public function query($sql = null)
+/**
+ * [queryAsArray description]
+ * @param  [type] $sql [description]
+ * @return [type]      [description]
+ */
+    public function queryAsArray($sql = null)
     {
+        // $result = $this->query($sql);
+        // $data = result2Array($result);
+
+        $data = [
+          'prename'   => 'Michael',
+          'surname'   => 'Reichart',
+          'username'  => 'Michael',
+          'lastLogin' => '2018/02/19',
+          'email'     => 'michel@zenbox.de',
+          'password'  => 'geheim'
+        ];
+
+        return $data;
+    }
+
+/**
+ * [query description]
+ * @param  [type] $sql [description]
+ * @return [type]      [description]
+ */
+    private function query($sql = null)
+    {
+        $result = mysqli_query($this->getLink(), $sql);
+        return $result;
+    }
+
+/**
+ * [result2Array description]
+ * @param  [type] $result [description]
+ * @return [type]         [description]
+ */
+    private function result2Array($result = null)
+    {
+        while ($row = mysql_fetch_assoc($result)) {
+            $data[] = $row;
+        }
+        return $data;
     }
 
   // getter/setter
-
-
     /**
      * Get the value of A Database class
      *

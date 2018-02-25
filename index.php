@@ -41,3 +41,8 @@ $user = new User($arguments);
 
 // getting a property's value
 echo $user->getSurname();
+
+// $arr[] = '1';
+// $arr[] = '2';
+// $arr[] = '3';
+// var_dump($arr);

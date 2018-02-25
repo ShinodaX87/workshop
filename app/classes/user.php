@@ -9,7 +9,12 @@
  * @copyright (c) 2018 Michael Reichart, Cologne
  * @license MIT License [https://opensource.org/licenses/MIT]
  */
-class User
+
+// includes
+require_once('Meta.php');
+require_once('interfaces/InterfaceUser.php');
+
+class User extends Meta
 {
     // properties
     private $username  = null;
@@ -22,9 +27,6 @@ class User
     // - - - - - - - - - -
     // magic methods
     // - - - - - - - - - -
-
-
-
     /**
      * [__construct description]
      * @param string $username  [description]
@@ -52,6 +54,9 @@ class User
 
     public function __construct($arguments)
     {
+        // instantiating the parent constructor
+        parent::__construct();
+        parent::do();
         // foreach ($arguments as $key=>$argument) {
         //     eval('$this->set' . ucfirst($key) . '(\'' . $argument . '\');');
         // }
@@ -70,6 +75,12 @@ class User
     // - - - - - - - - - -
     // own methods
     // - - - - - - - - - -
+    public function say($type, $message = null)
+    {
+    }
+    public function login()
+    {
+    }
     public function doSomething()
     {
         return true;
