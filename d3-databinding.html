@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <h1>D3 Basics</h1>
+    <h1>D3 Data Binding</h1>
 
     <script type="text/javascript">
       // IIFE - Pattern (Immediate Invoked Function Expression)
@@ -19,8 +19,15 @@
         //  - - - - - - - - - -
 
         // D3 Data Binding
-
-
+        d3.select('body')
+          .selectAll('p')
+          .data([4, 8, 15, 16, 23, 42, 108])
+          .enter()
+          .append('p')
+          .text('lorem ipsum dolor sit ...')
+          .style('font-size', function(d, i) {
+            return d + 'px';
+          });
         //  - - - - - - - - - -
       })();
     </script>

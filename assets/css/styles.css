@@ -1,0 +1,18 @@
+/**
+ * some nice styles
+ * @author michael
+ * @version 1.0.0
+ */
+
+#svg {
+  border-style: dashed;
+  border-color: grey;
+  border-width: 1px;
+}
+
+.circle {
+  fill: steelblue;
+  stroke-dasharray: 12;
+  stroke: lightcoral;
+  stroke-width: 4px;
+}
