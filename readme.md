@@ -1,21 +1,8 @@
-#D3 Collection
-##SNIPPETS
+# D3 Collection
+## SNIPPETS
 
 ```
 '.text.html':
-  'navigation component':
-    'prefix':'nav component'
-    'body': """
-            <!-- navigation component -->
-            <nav>
-              <ul role="navigation" class="nav nav-vertical">
-                <li role="presentation"><a href="page-1.html" id="my-navi-1">page 1</a></li>
-                <li role="presentation"><a href="page-2.html" id="my-navi-2">page 2</a></li>
-                <li role="presentation"><a href="page-3.html" id="my-navi-3">page 3</a></li>
-              </ul>
-            </nav>
-            <!-- /navigation component -->
-            """
   'd3 template':
     'prefix':'d3 template'
     'body':"""
