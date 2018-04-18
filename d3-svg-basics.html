@@ -27,7 +27,7 @@
         // D3 SVG Basics
         d3.select('#svg')
           .selectAll('.new-circle')
-          .data([4, 8, 15, 15, 15, 15, 15])
+          .data([4, 8, 15, 16, 32, 42, 108])
           .enter()
           .append('circle')
           .attr('class', 'new-circle')
@@ -35,7 +35,7 @@
             return d;
           })
           .attr('cx', function(d, i) {
-            return i * 50
+            return i * 50;
           })
           .attr('cy', 250)
 

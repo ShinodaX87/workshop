@@ -10,9 +10,9 @@
   border-width: 1px;
 }
 
-.circle {
-  fill: steelblue;
-  stroke-dasharray: 12;
-  stroke: lightcoral;
-  stroke-width: 4px;
+.circle, .new-circle {
+  fill: lightsteelblue;
+  stroke-dasharray: 5px;
+  stroke: hsla(360, 100%, 100%, 0.8);
+  stroke-width: 5px;
 }

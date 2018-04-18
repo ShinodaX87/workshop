@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+
+    <title>D3 Graph template</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+  </head>
+
+  <body>
+    <h1>D3 Graph template</h1>
+
+    <script type="text/javascript">
+      // IIFE - Pattern (Immediate Invoked Function Expression)
+      (function() {
+        'use strict';
+        //  - - - - - - - - - -
+        // declaration
+        var
+          canvas = null,
+          svg = null;
+
+        canvas = {
+          "width": 500,
+          "height": 500,
+          "viewbox": {
+            "x": 0,
+            "y": 0,
+            "width": 500,
+            "height": 500
+          },
+          "padding": {
+            "top": 20,
+            "right": 20,
+            "bottom": 20,
+            "left": 20
+          }
+        };
+
+        // methods
+
+        // control
+        // building the canvas
+        svg = d3.select('body')
+          .append('svg')
+          .attr('id', 'svg')
+          .attr('width', canvas.width)
+          .attr('height', canvas.height)
+          .attr('viewbox', canvas.viewbox.x + ' ' + canvas.viewbox.y + ' ' + canvas.viewbox.width + ' ' + canvas.viewbox.height)
+
+        //  - - - - - - - - - -
+      })();
+    </script>
+  </body>
+
+</html>
