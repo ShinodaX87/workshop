@@ -3,11 +3,43 @@
 
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+
     <title>D3 Basics</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
   </head>
 
   <body>
     <h1>D3 Basics</h1>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+      dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+      dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+      dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <script type="text/javascript">
+      // IIFE - Pattern (Immediate Invoked Function Expression)
+      (function() {
+        'use strict';
+        //  - - - - - - - - - -
+
+        // D3 Selectors
+        //$('p').css('color', 'red');
+
+        d3.selectAll('h1, p').style('color', 'white');
+        d3.select('body').style('background-color', 'black');
+        // d3.selectAll('.class');
+        // d3.select('#id');
+
+        // dynamic values
+        d3.selectAll('h1, p').style('color', function(d, i) {
+          return i % 2 ? 'white' : 'grey';
+        });
+
+        //  - - - - - - - - - -
+      })();
+    </script>
   </body>
 
 </html>
