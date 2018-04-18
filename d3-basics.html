@@ -37,6 +37,12 @@
           return i % 2 ? 'white' : 'grey';
         });
 
+        // data
+        d3.selectAll('p')
+          .data(['15', '24', '42'])
+          .style('font-size', function(d, i) {
+
+          });
         //  - - - - - - - - - -
       })();
     </script>
