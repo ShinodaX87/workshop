@@ -7,6 +7,7 @@
 
     <title>D3 Graph template</title>
     <script src="https://d3js.org/d3.v5.min.js"></script>
+    <link rel="stylesheet" href="assets/css/styles.css">
   </head>
 
   <body>
@@ -20,7 +21,11 @@
         // declaration
         var
           canvas = null,
-          svg = null;
+          scale = null,
+          svg = null,
+          setCanvas = null,
+          setXScale = null,
+          setYScale = null;
 
         canvas = {
           "width": 500,
@@ -38,17 +43,65 @@
             "left": 20
           }
         };
+        scale = {
+          xAxis: {
+            domain: {
+              from: 0,
+              to: 5
+            },
+            range: {
+              start: canvas.padding.left,
+              end: canvas.width - canvas.padding.right
+            }
+          },
+          yAxis: {
+            domain: {
+              from: 0,
+              to: 5
+            },
+            range: {
+              start: canvas.padding.top,
+              end: canvas.height - canvas.padding.bottom
+            }
+          },
+        };
 
         // methods
+        /**
+         * setCanvas
+         * @return none
+         */
+        setCanvas = function() {
+          d3.select('body')
+            .append('svg')
+            .attr('id', 'svg')
+            .attr('width', canvas.width)
+            .attr('height', canvas.height)
+            .attr('viewbox', canvas.viewbox.x + ' ' + canvas.viewbox.y + ' ' + canvas.viewbox.width + ' ' + canvas.viewbox.height);
+        };
+
+        /**
+         * set the x-scale parameters
+         * @return none
+         */
+        setXScale = function() {
+          d3.scaleLinear()
+            .domain([scale.xAxis.domain.from, scale.xAxis.domain.to]) // values
+            .range([scale.xAxis.range.start, scale.xAxis.range.end]); // start/end on axis
+        };
+        /**
+         * set the y-scale parameters
+         * @return none
+         */
+        setYScale = function() {
+          d3.scaleLinear()
+            .domain([scale.yAxis.domain.from, scale.yAxis.domain.to]) // values
+            .range([scale.yAxis.range.start, scale.yAxis.range.end]); // start/end on axis
+        };
 
         // control
         // building the canvas
-        svg = d3.select('body')
-          .append('svg')
-          .attr('id', 'svg')
-          .attr('width', canvas.width)
-          .attr('height', canvas.height)
-          .attr('viewbox', canvas.viewbox.x + ' ' + canvas.viewbox.y + ' ' + canvas.viewbox.width + ' ' + canvas.viewbox.height)
+        setCanvas();
 
         //  - - - - - - - - - -
       })();

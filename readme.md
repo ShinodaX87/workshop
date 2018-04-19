@@ -1,7 +1,7 @@
 # D3 Collection
 ## SNIPPETS
 
-```
+```coffeescript
 '.text.html':
   'd3 template':
     'prefix':'d3 template'
