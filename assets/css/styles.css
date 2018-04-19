@@ -13,6 +13,12 @@
 .circle, .new-circle {
   fill: lightsteelblue;
   stroke-dasharray: 5px;
-  stroke: hsla(360, 100%, 100%, 0.8);
+  stroke: hsla(360, 100%, 50%, 0.8);
   stroke-width: 5px;
+}
+
+.line {
+  fill: none;
+  stroke: hsla(360, 100%, 50%, 0.8);
+  stroke-width: 4px;
 }
