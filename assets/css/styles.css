@@ -10,15 +10,15 @@
   border-width: 1px;
 }
 
-.circle, .new-circle {
+.circle, .new-circle, .dot {
   fill: lightsteelblue;
   stroke-dasharray: 5px;
   stroke: hsla(360, 100%, 50%, 0.8);
-  stroke-width: 5px;
+  stroke-width: 2px;
 }
 
 .line {
   fill: none;
   stroke: hsla(360, 100%, 50%, 0.8);
-  stroke-width: 4px;
+  stroke-width: 2px;
 }

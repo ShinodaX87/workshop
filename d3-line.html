@@ -53,6 +53,7 @@
           setCanvas = null,
           setLine = null,
           drawLine = null,
+          drawDots = null,
 
           setXScale = null,
           setYScale = null,
@@ -90,12 +91,12 @@
           },
           yAxis: {
             domain: {
-              from: 5,
-              to: 0
+              from: 0,
+              to: 5
             },
             range: {
-              start: canvas.padding.top,
-              end: canvas.height - canvas.padding.bottom
+              start: canvas.height - canvas.padding.bottom,
+              end: canvas.padding.top
             }
           },
         };
@@ -173,11 +174,29 @@
             .attr('d', line)
         };
 
+        drawDots = function() {
+
+          svg.selectAll('.dots')
+            .data(data)
+            .enter()
+            .append('circle')
+            .attr('class', 'dot')
+            .attr('r', 10)
+            .attr('cx', function(d, i) {
+              return xScale(d.x);
+            })
+            .attr('cy', function(d, i) {
+              return yScale(d.y);
+            })
+
+        }
+
         // CONTROL
         setCanvas();
         setXAxis();
         setYAxis();
         drawLine();
+        drawDots();
 
         //  - - - - - - - - - -
       })();
