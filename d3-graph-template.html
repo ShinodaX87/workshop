@@ -25,7 +25,11 @@
           svg = null,
           setCanvas = null,
           setXScale = null,
-          setYScale = null;
+          setYScale = null,
+          xScale = null,
+          yScale = null,
+          setXAxis = null,
+          setYAxis = null;
 
         canvas = {
           "width": 500,
@@ -72,7 +76,7 @@
          * @return none
          */
         setCanvas = function() {
-          d3.select('body')
+          svg = d3.select('body')
             .append('svg')
             .attr('id', 'svg')
             .attr('width', canvas.width)
@@ -85,7 +89,7 @@
          * @return none
          */
         setXScale = function() {
-          d3.scaleLinear()
+          xScale = d3.scaleLinear()
             .domain([scale.xAxis.domain.from, scale.xAxis.domain.to]) // values
             .range([scale.xAxis.range.start, scale.xAxis.range.end]); // start/end on axis
         };
@@ -94,14 +98,30 @@
          * @return none
          */
         setYScale = function() {
-          d3.scaleLinear()
+          yScale = d3.scaleLinear()
             .domain([scale.yAxis.domain.from, scale.yAxis.domain.to]) // values
             .range([scale.yAxis.range.start, scale.yAxis.range.end]); // start/end on axis
+        };
+
+        setXAxis = function() {
+          setXScale();
+          svg.append('g')
+            .attr('class', ' x axis')
+            .call(d3.axisBottom(xScale));
+        };
+
+        setYAxis = function() {
+          setYScale();
+          svg.append('g')
+            .attr('class', 'y axis')
+            .call(d3.axisLeft(yScale));
         };
 
         // control
         // building the canvas
         setCanvas();
+        setXAxis();
+        setYAxis();
 
         //  - - - - - - - - - -
       })();
