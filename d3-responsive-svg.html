@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+
+    <title>D3 Responsive SVG</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <style>
+      /* fallback for all devices */
+
+      #chart {
+        width: 300px;
+        height: 300px;
+      }
+
+      .box {
+        fill: lightsteelblue;
+      }
+
+      @media screen and (max-width:320px) {
+        #chart {
+          width: 100%;
+
+        }
+      }
+
+      @media screen and (min-width:321px) {
+        #chart {
+          width: 320px;
+
+        }
+      }
+
+      @media screen and (min-width:768px) {
+        #chart {
+          width: 680px;
+
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>D3 Responsive SVG</h1>
+    <div id="chart"></div>
+
+    <script type="text/javascript">
+      // IIFE - Pattern (Immediate Invoked Function Expression)
+      (function() {
+        'use strict';
+        //  - - - - - - - - - -
+
+        // D3 Responsive SVG
+        var
+          svg = d3.select('#chart').append('svg'),
+          chartDiv = document.querySelector('#chart'),
+          data = [20, 30, 40],
+          redraw;
+
+
+
+        console.dir(chartDiv);
+
+        redraw = function() {
+
+          svg
+            .attr('width', chartDiv.clientWidth)
+            .attr('height', chartDiv.clientHeight)
+            .attr('id', 'svg')
+
+          svg.selectAll('.box')
+            .data(data)
+            .enter()
+            .append('rect')
+            .attr('x', '0')
+            .attr('y', '0')
+            .attr('width', chartDiv.clientWidth / 4)
+            .attr('height', chartDiv.clientHeight / 4)
+            .attr('transform', 'translate(20,20)')
+        }
+
+        window.addEventListener('load', redraw);
+        window.addEventListener('resize', redraw);
+        //  - - - - - - - - - -
+      })();
+    </script>
+  </body>
+
+</html>
