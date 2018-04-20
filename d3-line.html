@@ -13,6 +13,8 @@
   <body>
     <h1>D3 Line Chart</h1>
 
+    <div id="container"></div>
+
     <script type="text/javascript">
       // IIFE - Pattern (Immediate Invoked Function Expression)
       (function() {
@@ -64,6 +66,7 @@
           setXAxis = null,
           setYAxis = null;
 
+
         canvas = {
           "width": 500,
           "height": 500,
@@ -114,13 +117,18 @@
          * @return none
          */
         setCanvas = function() {
-          svg = d3.select('body')
+          svg = d3.select('#container')
             .append('svg')
             .attr('id', 'svg')
-            .attr('width', canvas.width)
-            .attr('height', canvas.height)
-            .attr('viewbox', canvas.viewbox.x + ' ' + canvas.viewbox.y + ' ' + canvas.viewbox.width + ' ' + canvas.viewbox.height);
+            // .attr('width', canvas.width)
+            // .attr('height', canvas.height)
+            // .attr('viewbox', canvas.viewbox.x + ' ' + canvas.viewbox.y + ' ' + canvas.viewbox.width + ' ' + canvas.viewbox.height)
+            .attr('width', "100%")
+            .attr('height', "100%")
+            .attr('viewbox', "0,0,100%,100%")
+            .attr("preserveAspectRatio", "xMinYMin meet");
         };
+
 
         /**
          * set the x-scale parameters
@@ -232,7 +240,6 @@
         setYAxis();
         drawLine();
         drawDots();
-
         //  - - - - - - - - - -
       })();
     </script>
