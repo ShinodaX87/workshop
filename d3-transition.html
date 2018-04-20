@@ -13,7 +13,6 @@
         display: block;
         width: 100%;
         text-align: center;
-        margin: 0 auto;
       }
 
       .box {
@@ -31,6 +30,11 @@
 
     <div class="container">
       <div class="box apple"></div>
+      <div class="box apple"></div><br>
+      <div class="box orange"></div>
+      <div class="box orange"></div><br>
+      <div class="box banana"></div>
+      <div class="box banana"></div><br>
     </div>
 
     <script type="text/javascript">
@@ -40,11 +44,84 @@
         //  - - - - - - - - - -
 
         // D3 Transition
+        d3.select('body').transition().style('background-color', 'black');
+        d3.select('h1').transition().style('color', 'white');
 
+        // Multiple transitions
+        var t1 = d3.transition()
+          .duration(2400) // ms
+          .ease(d3.easeLinear);
+
+        d3.selectAll('.apple')
+          .transition(t1)
+          .style('background-color', 'red')
+          .style('width', '50px');
+
+        d3.selectAll('.orange')
+          .transition(t1)
+          .style('background-color', 'orange')
+          .style('width', '50px');
+
+
+        // Chaining transitions
+        d3.selectAll('.banana')
+          .transition()
+          .duration(800)
+          .style('background-color', 'green')
+          .style('width', '50px')
+          .transition()
+          .duration(800)
+          .style('background-color', 'orange')
+          .style('width', '75px')
+          .transition()
+          .duration(800)
+          .style('background-color', 'yellow')
+          .style('width', '100px');
+
+        function circleTransition() {
+
+          var timeCircle, repeat;
+
+          timeCircle = d3.select('.container').append("div")
+            .attr("background-color", "steelblue")
+            .classed('box', true)
+            .classed('blue', true);
+
+
+          repeat = function() {
+
+            timeCircle
+              .transition()
+              .duration(800)
+              .style('background-color', 'lightsteelblue')
+              .style('width', '100px')
+              .transition()
+              .duration(800)
+              .style('background-color', 'lime')
+              .style('width', '200px')
+
+              .on("end", repeat); // when the transition finishes start again
+          };
+
+          repeat();
+
+        };
+
+
+        circleTransition();
 
         //  - - - - - - - - - -
       })();
     </script>
   </body>
+
+
+
+
+
+
+
+
+
 
 </html>
