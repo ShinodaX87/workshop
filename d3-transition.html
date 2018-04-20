@@ -23,6 +23,10 @@
         border-radius: 1rem;
       }
 
+      .cycle {
+        display: block;
+      }
+
       .thing {
         background-color: white;
       }
@@ -92,6 +96,7 @@
           timeCircle = d3.select('.container').append("div")
             .attr("background-color", "steelblue")
             .classed('box', true)
+            .classed('cycle', true)
             .classed('blue', true);
 
 
