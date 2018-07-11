@@ -1,7 +1,7 @@
 /**
  * Some Generated Circles ...
  * @author Michael
- * @since 2017/07/11
+ * @since 2018/07/11
  */
 
 !(function () {
@@ -37,7 +37,7 @@
     .append('g')
     .attr('transform', 'translate(50,50)');
 
-  // building circles from dataset
+  // building rectangles from dataset
   group.selectAll()
     .data(dataset)
     .enter()
@@ -55,7 +55,27 @@
         tx = (25 + 25) * i,
         ty = 200 - d * sy;
 
-      return 'translate(' + tx + ', ' + ty + ') scale(' + sx + ', ' + sy + ')'
+      return 'translate(' + tx + ', ' + ty + ') scale(' + sx + ', ' + sy + ')';
+    })
+
+  // building textboxes from dataset
+  group.selectAll()
+    .data(dataset)
+    .enter()
+    .append('text')
+    .attr('x', 0)
+    .attr('y', 0)
+    .text(function (d, i) {
+      return d;
+    })
+    .attr('transform', function (d, i) {
+      let
+        sx = 1,
+        sy = 0.00005,
+        tx = (25 + 25) * i,
+        ty = 200 - d * sy - 15;
+
+      return 'translate(' + tx + ', ' + ty + ') scale(1,1)';
     })
 
   // - - - - - - - - - -
