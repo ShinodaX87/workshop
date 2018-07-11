@@ -58,7 +58,5 @@
       return 'translate(' + tx + ', ' + ty + ') scale(' + sx + ', ' + sy + ')'
     })
 
-
-
   // - - - - - - - - - -
 }())
