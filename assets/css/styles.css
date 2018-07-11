@@ -1,33 +1,10 @@
 /**
- * some nice styles
- * @author michael
- * @version 1.0.0
+ * styles for D3 Basics
+ * @author Michael
+ * @since 2017/07/11
  */
 
 html {
-  font-family: sans-serif;
-  font-size: 12px;
-  line-height: 1.5;
-}
-
-#svg {
-  border-style: dashed;
-  border-color: grey;
-  border-width: 1px;
-}
-
-.circle, .new-circle, .dot {
-  fill: lightsteelblue;
-  stroke: hsla(360, 100%, 50%, 0.8);
-  stroke-width: 2px;
-}
-
-.line {
-  fill: none;
-  stroke: hsla(360, 100%, 50%, 0.8);
-  stroke-width: 4px;
-}
-
-.label {
-  fill: hsla(0, 100%, 50%, 0.8);
+  color: hsla(360, 0%, 100%, 1);
+  background-color: hsla(360, 0%, 10%, 1);
 }
