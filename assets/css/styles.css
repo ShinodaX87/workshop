@@ -8,3 +8,12 @@ html {
   color: hsla(360, 0%, 100%, 1);
   background-color: hsla(360, 0%, 10%, 1);
 }
+
+svg {
+  border-color: lightsteelblue;
+  border-width: 5px;
+  border-style: solid;
+  stroke: lightsteelblue;
+  stroke-width: 5px;
+  fill: steelblue;
+}
