@@ -12,7 +12,7 @@
     dataset = [
       // x, y, r
       [5, 20, 100],
-      [1300, 90, 1000],
+      [1300, 90, 100],
       [250, 50, 50],
       [100, 33, 320],
       [330, 95, 710]
@@ -84,15 +84,15 @@
     radius: {
       domain: {
         from: d3.min(dataset, function (d, i) {
-          return d[2] + 5;
+          return d[2];
         }),
         to: d3.max(dataset, function (d, i) {
-          return d[2] + 5;
+          return d[2];
         })
       },
       range: {
-        start: 0,
-        end: 10
+        start: 5,
+        end: 55
       },
     }
   };
