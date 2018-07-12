@@ -113,7 +113,7 @@
     .call(xAxis);
 
   svg.append('g')
-    .attr('transform', 'translate(0, ' + (canvas.padding.left) + ')')
+    .attr('transform', 'translate(' + (canvas.padding.left) + ', 0)')
     .call(yAxis);
 
   // - - - - - - - - - -
