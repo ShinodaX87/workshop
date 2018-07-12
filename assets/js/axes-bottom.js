@@ -73,7 +73,7 @@
       domain: {
         from: 0,
         to: d3.max(dataset, function (d, i) {
-          return d[1];
+          return d[1] + 10;
         })
       },
       range: {
