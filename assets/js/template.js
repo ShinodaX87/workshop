@@ -8,9 +8,16 @@
   // - - - - - - - - - -
   // declaration
   let
-    canvas, svg,
-    scale, xScale, yScale,
-    w, h, tx, ty, f;
+    canvas = undefined,
+    svg = undefined,
+    scale = undefined,
+    xScale = undefined,
+    yScale = undefined,
+    w = undefined,
+    h = undefined,
+    tx = undefined,
+    ty = undefined,
+    f = undefined;
 
   // head section
   canvas = {
