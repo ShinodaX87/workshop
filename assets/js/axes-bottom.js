@@ -11,7 +11,7 @@
   let
     dataset = [
       [5, 20],
-      [480, 90],
+      [1300, 90],
       [250, 50],
       [100, 33],
       [330, 95]
@@ -38,7 +38,7 @@
 
   // head section
   canvas = {
-    width: 400,
+    width: 800,
     height: 400,
     viewbox: {
       x: 0,
@@ -71,11 +71,11 @@
         from: 0,
         to: d3.max(dataset, function (d, i) {
           return d[1];
-        }),
-        range: {
-          start: canvas.height - canvas.padding.bottom,
-          end: canvas.padding.top
-        }
+        })
+      },
+      range: {
+        start: canvas.height - canvas.padding.bottom,
+        end: canvas.padding.top
       }
     }
   };
@@ -96,11 +96,25 @@
     .domain([scale.xAxis.domain.from, scale.xAxis.domain.to])
     .range([scale.xAxis.range.start, scale.xAxis.range.end]);
 
+  yScale = d3.scaleLinear()
+    .domain([scale.yAxis.domain.from, scale.yAxis.domain.to])
+    .range([scale.yAxis.range.start, scale.yAxis.range.end]);
+
   xAxis = d3.axisBottom()
-    .scale(xScale);
+    .scale(xScale)
+    .ticks(5);
+
+  yAxis = d3.axisLeft()
+    .scale(yScale)
+    .ticks(5);
 
   svg.append('g')
+    .attr('transform', 'translate(0, ' + (canvas.height - canvas.padding.bottom) + ')')
     .call(xAxis);
+
+  svg.append('g')
+    .attr('transform', 'translate(0, ' + (canvas.padding.left) + ')')
+    .call(yAxis);
 
   // - - - - - - - - - -
 }())
