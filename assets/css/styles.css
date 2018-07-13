@@ -43,7 +43,7 @@ svg .tick text {
 }
 
 svg path {
-  fill: hsla(360, 0%, 10%, 1);
+  fill: hsla(360, 0%, 30%, 1);
   stroke: white;
   stroke-width: 1px;
 }
