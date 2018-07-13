@@ -41,3 +41,9 @@ svg .tick text {
   fill: white;
   font-family: monospace;
 }
+
+svg path {
+  fill: hsla(360, 0%, 10%, 1);
+  stroke: white;
+  stroke-width: 1px;
+}

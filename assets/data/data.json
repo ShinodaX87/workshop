@@ -1,11 +1,13 @@
 [{
     "name": "John",
     "age": 30,
-    "city": "New York"
+    "city": "New York",
+    "isNice": true
   },
   {
     "name": "Jane",
     "age": 20,
-    "city": "San Francisco"
+    "city": "San Francisco",
+    "birthday": "2018/07/12"
   }
 ]

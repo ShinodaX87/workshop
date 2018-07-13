@@ -9,7 +9,7 @@
     <style>
       .box {
         display: block;
-        width: 0;
+        width: 50px;
         height: 50px;
         /* root em */
       }
@@ -21,6 +21,10 @@
       .banana {
         background-color: yellow;
       }
+
+      .plum {
+        background-color: white;
+      }
     </style>
   </head>
 
@@ -29,12 +33,15 @@
 
     <div class="box apple"></div>
     <div class="box banana"></div>
+    <div class="container"></div>
 
     <script type="text/javascript">
       !(function() {
         'use strict';
         // - - - - - - - - - -
-        let t = undefined;
+        let
+          t = undefined,
+          dataset = undefined;
 
         // simple and straight
         t = d3.transition()
@@ -59,6 +66,20 @@
 
         // calculated
         // data based
+        dataset = [50, 70, 20, 100, 10, 90];
+        d3.select('.container')
+          .selectAll()
+          .data(dataset)
+          .enter()
+          .append('div')
+          .classed('box', true)
+          .classed('plum', true)
+          .transition()
+          .duration(9000)
+          .style('width', function(d, i) {
+            return (d * 3) + 'px';
+          })
+
 
         // - - - - - - - - - -
       }())
