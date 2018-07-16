@@ -30,16 +30,52 @@
     .data(dataset)
     .enter()
     .append('rect')
-    .attr('x', function (d, i) {
-      return (i * (width - 40) / dataset.length);
+    .on('mouseenter', function (d, i) {
+      console.log(d + ', ' + i);
+      d3.select(this)
+        .transition()
+        .attr('data-value', d)
+        .style('fill', 'lime');
     })
+    .on('mouseleave', function (d, i) {
+      console.log(d + ', ' + i);
+      d3.select(this)
+        .transition()
+        .attr('data-value', null)
+        .style('fill', 'lightcoral');
+    })
+    .attr('x', function (d, i) {
+      return 20 + (i * (width - 40) / dataset.length);
+    })
+    .transition()
     .attr('y', 20)
     .attr('width', ((width - 40) / dataset.length))
     .attr('height', function (d, i) {
-      console.log(d);
-      return Math.random() * 360;
+      return d;
     })
     .style('fill', 'lightcoral')
     .style('stroke', 'white');
+
+
+
+  // updating
+  d3.select('button')
+    .on('click', function () {
+      dataset = [Math.random() * 360, Math.random() * 360, Math.random() * 360];
+
+      svg.selectAll('rect')
+        .data(dataset)
+        .transition()
+        .attr('height', function (d, i) {
+          return d;
+        });
+    })
+
+
+
+
+
+
+
   // - - - - - - - - - -
 }());
