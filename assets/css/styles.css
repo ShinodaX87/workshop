@@ -1,0 +1,12 @@
+/**
+ * Styles ...
+ * @author Michael
+ * @since 2018/07/24
+ * @version 1.0.13
+ */
+
+html, body {
+  color: white;
+  background-color: black;
+  font-family: sans-serif;
+}
