@@ -28,11 +28,12 @@
         height: 100%;
         margin: 0;
         padding: 0;
+        text-align: center;
       }
 
       .layout {
         display: table;
-        width: 100%;
+        width: 600px;
         height: 100%;
         background-color: #CCC;
         color: #000;
@@ -45,10 +46,12 @@
           font-size: 14px;
           line-height: 1.378;
         }
-        .body h1 {
+        .body h1,
+        .body h1 font {
           font-size: 2em;
         }
-        .body p {
+        .body p,
+        .body p font {
           font-size: 1em;
         }
 
@@ -59,17 +62,36 @@
         }
       }
 
-      @media only screen and (max-width:480px) {
-        table.layout {
-          max-width: 480px;
-        }
-      }
+      /* Apple Mail */
 
-      @media only screen and (max-width:320px) {
+      @media only screen and (min-device-width:651px) {}
+
+      @media only screen and (device-resolution: 192px) {}
+
+      @media only screen and (max-width:480px) {
         .body {
           font-size: 18px;
           line-height: 1.297;
         }
+        .body h1,
+        .body h1 font {
+          font-size: 2em;
+        }
+        .body p,
+        .body p font {
+          font-size: 1em;
+        }
+
+        table.layout {
+          max-width: 480px;
+        }
+
+        table.footer td {
+          display: block;
+          /* ist sonst display:table-cell */
+          width: 100%;
+        }
+
       }
     </style>
 
@@ -78,6 +100,14 @@
   <body>
     <!-- - - - - - - - - - - -->
     <div class="body">
+      <!-- Conditional Comment for Outlook -->
+      <!--
+        [if (gte mso 9)]
+          <table width="650">
+          <tr>
+          <td>
+        [end if]
+      -->
       <table class="layout" border="0" width="600" height="100%" cellspacing="0" cellpadding="0">
         <tr>
           <td align="center" valign="top">
@@ -107,16 +137,22 @@
               <tr>
                 <td bgcolor="#222">
 
-                  <table border="0" width="100%" cellspacing="0" cellpadding="25">
+                  <table class="footer" border="0" width="100%" cellspacing="0" cellpadding="25">
                     <tr>
                       <td width="33%" valign="top" align="left">
-                        <font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Lorem ipsum dolor sit amet</font>
+                        <p>
+                          <font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Lorem ipsum dolor sit amet</font>
+                        </p>
                       </td>
                       <td width="34%" valign="top" align="left">
-                        <font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Duis aute irure dolor in reprehenderit</font>
+                        <p>
+                          <font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Duis aute irure dolor in reprehenderit</font>
+                        </p>
                       </td>
                       <td width="33%" valign="top" align="left">
-                        <font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Duis aute irure dolor in reprehenderit</font>
+                        <p>
+                          <font face="Arial, Helvetica, sans-serif" size="2" color="#FFFFFF">Duis aute irure dolor in reprehenderit</font>
+                        </p>
                         </ul>
                       </td>
                     </tr>
@@ -129,6 +165,13 @@
           </td>
         </tr>
       </table>
+      <!--
+        [if (gte mso 9)]
+        </td>
+        </tr>
+        </table>
+        [end if]
+      -->
     </div>
     <!-- - - - - - - - - - - -->
   </body>
