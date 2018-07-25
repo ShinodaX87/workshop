@@ -13,8 +13,20 @@ html, body {
 
 /* media query based responsive */
 
-@media screen and (max-width:480px) {
+@media screen {
   td {
     background-color: lightcoral;
+  }
+}
+
+@media screen and (max-width:480px) {
+  td {
+    background-color: lime;
+  }
+}
+
+@media screen and (max-width:320px) {
+  td {
+    background-color: salmon;
   }
 }
