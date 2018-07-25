@@ -13,20 +13,35 @@ html, body {
 
 /* media query based responsive */
 
-@media screen {
-  td {
-    background-color: lightcoral;
+@media print {}
+
+@media only screen {
+  .body {
+    font-size: 14px;
+    line-height: 1.378;
+  }
+  .body h1 {
+    font-size: 2em;
+  }
+  .body p {
+    font-size: 1em;
+  }
+  table.layout {
+    display: table;
+    /* block */
+    width: 600px;
   }
 }
 
-@media screen and (max-width:480px) {
-  td {
-    background-color: lime;
+@media only screen and (max-width:480px) {
+  table.layout {
+    max-width: 480px;
   }
 }
 
-@media screen and (max-width:320px) {
-  td {
-    background-color: salmon;
+@media only screen and (max-width:320px) {
+  .body {
+    font-size: 18px;
+    line-height: 1.297;
   }
 }
